@@ -1,0 +1,20 @@
+extra_css:
+- styles/extra.css
+nav:
+- Inicio: index.md
+- Contenidos: contenidos.md
+- Bloque 1. Conceptos avanzados de POO:
+  - Repaso de POO: Bloque1_POO/01_repaso_poo.md
+  - Mod. herencia y reusabilidad: Bloque1_POO/02_modularidad_herencia_reusabilidad.md
+  - Genericidad y contenedores: Bloque1_POO/03_genericidad_contenedores.md
+- Bloque 2. Programación guiada por eventos e interfaz gráfica:
+  - Eventos y clases anidadas: Bloque2_Eventos_GUI/01_eventos_clases_anidadas.md
+  - Interfaz gráfica de usuarios: Bloque2_Eventos_GUI/02_interfaz_grafica.md
+  - Componentes, layouts y navegación: Bloque2_Eventos_GUI/03_componentes_layouts_navegacion.md
+- Bloque 3. Programación concurrente y distribuida:
+  - Concurrencia y sincronización: Bloque3_Concurrente_Distribuida/01_concurrencia_sincronizacion.md
+  - Comunicación entre hilos y paralelismo: Bloque3_Concurrente_Distribuida/02_comunicacion_paralelismo.md
+  - Introducción a la programación distribuida: Bloque3_Concurrente_Distribuida/03_programacion_distribuida.md
+site_name: Tecnologías de Programación (TP)
+theme:
+  name: material
