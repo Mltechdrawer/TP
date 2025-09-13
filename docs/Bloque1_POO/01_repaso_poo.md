@@ -8,21 +8,26 @@ La **Programación Orientada a Objetos (POO)** es un paradigma de programación 
 
 ### Abstracción
 La abstracción consiste en identificar las características esenciales de una entidad del mundo real y representarlas en un modelo computacional.  
-Ejemplo: una clase `Coche` que abstrae atributos como `color` y `velocidad`, y métodos como `acelerar()` o `frenar()`.
-[👉 Ejecutar en Binder](https://mybinder.org/v2/gh/Mltechdrawer/TP-Java-Examples/main?urlpath=%2Fdoc%2Ftree%2FEjemploAbstraccion.ipynb)
 
+ **[Ejemplo Abstracción](01_codigos.md#abstraccion)**
 
 ### Encapsulación
 La encapsulación protege el acceso directo a los datos internos de un objeto, controlándolo mediante métodos definidos. Esto mejora la seguridad y reduce la dependencia entre módulos.  
-Ejemplo: atributos privados con métodos *getters* y *setters*.
+
+ **[Ejemplo Encapsulamiento](01_codigos.md#encapsulamiento)**
+
 
 ### Herencia
 La herencia permite que una clase (subclase) herede atributos y métodos de otra (superclase). Facilita la reutilización de código y la creación de jerarquías lógicas.  
-Ejemplo: `Vehiculo` como superclase, y `Coche` y `Moto` como subclases.
+
+ **[Ejemplo Herencia](01_codigos.md#herencia)**
+
+
 
 ### Polimorfismo
 El polimorfismo permite que un mismo método tenga comportamientos distintos según el contexto o la clase que lo implemente.  
-Ejemplo: el método `mover()` puede estar implementado de forma distinta en `Coche`, `Avion` o `Barco`.
+
+ **[Ejemplo Polimorfismo](01_codigos.md#polimorfismo)**
 
 ---
 
@@ -31,26 +36,8 @@ Ejemplo: el método `mover()` puede estar implementado de forma distinta en `Coc
 - **Clase**: Es la plantilla que define las propiedades (atributos) y comportamientos (métodos).  
 - **Objeto**: Es una instancia concreta de una clase, que posee valores específicos para sus atributos.  
 
-Ejemplo en pseudocódigo:
+ **[Ejemplo Clase y objeto](01_codigos.md#clases-y-objetos)**
 
-```java
-class Persona {
-    String nombre;
-    int edad;
-
-    void saludar() {
-        System.out.println("Hola, me llamo " + nombre);
-    }
-}
-
-// Creación de un objeto
-Persona p1 = new Persona();
-p1.nombre = "Ana";
-p1.edad = 25;
-p1.saludar();
-```
-
----
 
 ## 3. Ventajas de la POO
 
@@ -71,3 +58,5 @@ El repaso de estos conceptos es crucial para afrontar los siguientes temas del b
 ## 5. Conclusión
 
 La Programación Orientada a Objetos constituye una base sólida para el desarrollo de software moderno. Sus principios permiten construir sistemas más claros, mantenibles y robustos, y son fundamentales para abordar los contenidos más avanzados de la asignatura.
+
+ <!--- **[Ejercicio1](01_CuestionarioPOO_interactivo.md)**. --->
