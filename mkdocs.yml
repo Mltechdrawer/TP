@@ -5,7 +5,7 @@ nav:
 - Contenidos: contenidos.md
 - Bloque 1. Conceptos avanzados de POO:
   - Repaso de POO: Bloque1_POO/01_repaso_poo.md
-  - Mod. herencia y reusabilidad: Bloque1_POO/02_modularidad_herencia_reusabilidad.md
+  - Modularidad herencia y reusabilidad: Bloque1_POO/02_modularidad_herencia_reusabilidad.md
   - Genericidad y contenedores: Bloque1_POO/03_genericidad_contenedores.md
 - Bloque 2. Programación guiada por eventos e interfaz gráfica:
   - Eventos y clases anidadas: Bloque2_Eventos_GUI/01_eventos_clases_anidadas.md
