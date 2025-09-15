@@ -7,6 +7,42 @@
 <!-- Botón/iframe para ejecutar --> 
 <iframe frameBorder="0" width="100%" height="520" src="https://onecompiler.com/embed/java"></iframe>
 
+### Velocidad de ejecución
+
+## Java
+
+```java
+public class VelocidadJava {
+    public static void main(String[] args) {
+        long startTime = System.nanoTime();
+
+        int suma = 0;
+        for (int i = 0; i < 1000000; i++) {
+            suma += i;
+        }
+
+        long endTime = System.nanoTime();
+        System.out.println("Tiempo de ejecución en Java: " + (endTime - startTime) + " nanosegundos.");
+    }
+}
+// Java. Valores aproximados a: 3927653 nanosegundos (unos 4 milisegundos)
+```
+---
+```python
+import time
+
+start_time = time.time()
+
+suma = 0
+for i in range(1000000):
+    suma += i
+
+end_time = time.time()
+print("Tiempo de ejecución en Python:", (end_time - start_time), "segundos")
+
+// Python. Valores aproximados a: 0.13556790351867676 segundos (unos 135 milisegundos)
+```
+
 ### Abstracción
 
 ---
@@ -59,18 +95,20 @@ public class Main {
 ---
 ```java
 class Circulo {
+    // Al ser private solo los métodos de esta clase pueden acceder a ellos
     private String color;
     private int radio;
     private int x, y;
 
+    // El constructor permite crear objetos círculo con valores iniciales para sus atributos 
     public Circulo(String color, int radio, int x, int y) {
         this.color = color;
         this.radio = radio;
         this.x = x;
         this.y = y;
     }
-
-    public void cambiarTamano(int nuevoRadio) {
+    // Métodos que pueden alterar  los atributos de forma controlada
+        public void cambiarTamano(int nuevoRadio) {
         this.radio = nuevoRadio;
     }
 
@@ -78,13 +116,13 @@ class Circulo {
         this.x = nuevaX;
         this.y = nuevaY;
     }
-
+    // Encapsula la representación del objeto
     public void mostrar() {
         System.out.println("Círculo de color " + color + ", radio " + radio +
                            ", en la posición (" + x + ", " + y + ")");
     }
 }
-
+// Clase principal. Ejemplo de uso de encapsulamiento.
 public class Main {
     public static void main(String[] args) {
         Circulo circulo1 = new Circulo("Rojo", 50, 100, 100);
@@ -94,7 +132,7 @@ public class Main {
         circulo1.mostrar();
         circulo2.mostrar();
         circulo3.mostrar();
-
+        // Solo llama a los métodos públicos, no le interesa como se realizan
         circulo1.cambiarTamano(80);
         circulo1.cambiarPosicion(150, 200);
 
@@ -116,6 +154,7 @@ class Animal {
 
 class Perro extends Animal {
     Perro(String nombre) { super(nombre); }
+    // Anotación de un método, que indica que se sobreescribe
     @Override public void sonar() { System.out.println(getNombre() + ": ¡guau!"); }
     public void traerPelota() { System.out.println(getNombre() + " trae la pelota"); }
 }

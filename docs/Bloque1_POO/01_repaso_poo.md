@@ -59,4 +59,6 @@ El repaso de estos conceptos es crucial para afrontar los siguientes temas del b
 
 La Programación Orientada a Objetos constituye una base sólida para el desarrollo de software moderno. Sus principios permiten construir sistemas más claros, mantenibles y robustos, y son fundamentales para abordar los contenidos más avanzados de la asignatura.
 
+**[Java vs Python](01Java_vs_Python.md)**
+
  <!--- **[Ejercicio1](01_CuestionarioPOO_interactivo.md)**. --->

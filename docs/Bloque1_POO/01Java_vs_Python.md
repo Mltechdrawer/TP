@@ -1,4 +1,4 @@
-# Tema 1 · Java vs Python
+# Java vs Python
 
 Este tema presenta una comparación entre dos de los lenguajes de programación más influyentes y utilizados en la actualidad: **Java** y **Python**. Ambos tienen fortalezas y limitaciones, y su elección depende en gran medida del tipo de aplicación que se desee desarrollar.
 
@@ -19,6 +19,8 @@ Este tema presenta una comparación entre dos de los lenguajes de programación 
 ## Velocidad de ejecución
 - **Java**: Generalmente más rápido porque el código se compila a **bytecode** y se ejecuta en la **JVM (Java Virtual Machine)**, lo que optimiza el rendimiento.
 - **Python**: Más lento porque se interpreta línea por línea. Aunque existen intérpretes optimizados, en aplicaciones de gran escala puede ser menos eficiente.
+
+**[Velocidad de ejecución](01_codigos.md#velocidad-de-ejecución)**
 
 ---
 

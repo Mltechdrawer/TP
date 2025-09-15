@@ -15,9 +15,17 @@ La **modularidad** consiste en dividir un programa en componentes o módulos ind
 
 ### Ejemplo en Java
 ```java
-
+public class Calculadora {
+    public int suma(int a, int b) { return a + b; }
+    public int resta(int a, int b) { return a - b; }
+    public int multiplica(int a, int b) { return a * b; }
+    public int divide(int a, int b) {
+        if (b == 0) throw new ArithmeticException("División por cero");
+        return a / b;
+    }
+}
 ```
-En este caso, .
+En este caso, toda la lógica matemática se encuentra encapsulada en la clase `Calculadora`, separada de la interacción con el usuario.
 
 ---
 
@@ -30,10 +38,27 @@ La **herencia** permite definir nuevas clases basadas en otras ya existentes, re
 
 ### Ejemplo en Java
 ```java
+public class Persona {
+    protected String nombre;
+    protected String telefono;
 
+    public Persona(String nombre, String telefono) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+    }
+}
+
+public class Alumno extends Persona {
+    private int numExpediente;
+
+    public Alumno(String nombre, String telefono, int numExpediente) {
+        super(nombre, telefono);
+        this.numExpediente = numExpediente;
+    }
+}
 ```
 
-En este ejemplo, .
+En este ejemplo, `Alumno` hereda de `Persona`, reutilizando los atributos y añadiendo un campo propio.
 
 ---
 
@@ -42,10 +67,18 @@ El **polimorfismo** permite que una misma referencia pueda apuntar a objetos de 
 
 ### Ejemplo de clase abstracta
 ```java
+public abstract class FiguraGeometrica {
+    protected float altura;
+    public FiguraGeometrica(float altura) { this.altura = altura; }
 
+    public abstract float areaBase();
+    public abstract float perimetroBase();
+
+    public float volumen() { return altura * areaBase(); }
+}
 ```
 
-
+Subclases como `Cubo` o `Cilindro` implementan los métodos abstractos adaptados a su forma.
 
 ---
 
@@ -54,7 +87,18 @@ Una **interfaz** define un conjunto de métodos sin implementación. Las clases 
 
 ### Ejemplo en Java
 ```java
+interface Acuatico {
+    void nadar();
+}
 
+interface Terrestre {
+    void correr();
+}
+
+public class Cocodrilo implements Acuatico, Terrestre {
+    public void nadar() { System.out.println("El cocodrilo nada"); }
+    public void correr() { System.out.println("El cocodrilo corre"); }
+}
 ```
 
 Las interfaces permiten simular la herencia múltiple y promueven la flexibilidad del diseño.
@@ -71,7 +115,11 @@ La **reusabilidad** consiste en emplear código existente en diferentes contexto
 
 ### Ejemplo de reutilización mediante herencia
 ```java
-
+public class CalculadoraAvanzada extends Calculadora {
+    public double potencia(double base, double exponente) {
+        return Math.pow(base, exponente);
+    }
+}
 ```
 
 Aquí `CalculadoraAvanzada` reutiliza todos los métodos de `Calculadora` y añade nuevas funcionalidades.
