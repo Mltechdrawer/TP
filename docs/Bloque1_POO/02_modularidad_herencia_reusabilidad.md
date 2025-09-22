@@ -13,13 +13,6 @@ La **modularidad** consiste en dividir un programa en componentes o módulos ind
 - Facilita localizar y corregir errores.
 - Permite ampliar la funcionalidad sin afectar a todo el sistema.
 
-### Ejemplo en Java
-```java
-
-```
-En este caso, .
-
----
 
 ## Herencia
 La **herencia** permite definir nuevas clases basadas en otras ya existentes, reutilizando atributos y métodos y añadiendo o especializando funcionalidades.
@@ -28,55 +21,25 @@ La **herencia** permite definir nuevas clases basadas en otras ya existentes, re
 - **Superclase (clase base)**: clase original de la que heredan otras.
 - **Subclase (clase derivada)**: clase que extiende la funcionalidad de la superclase.
 
-### Ejemplo en Java
-```java
-
-```
-
-En este ejemplo, .
-
----
 
 ## Polimorfismo y Clases Abstractas
 El **polimorfismo** permite que una misma referencia pueda apuntar a objetos de diferentes clases, ejecutando el método correspondiente según el tipo del objeto real.
 
-### Ejemplo de clase abstracta
-```java
-
-```
-
-
-
----
 
 ## Interfaces
 Una **interfaz** define un conjunto de métodos sin implementación. Las clases que la implementan son responsables de definir su funcionamiento.
-
-### Ejemplo en Java
-```java
-
-```
 
 Las interfaces permiten simular la herencia múltiple y promueven la flexibilidad del diseño.
 
 ---
 
 ## Reusabilidad
-La **reusabilidad** consiste en emplear código existente en diferentes contextos o proyectos, evitando duplicaciones.
+La **reusabilidad** consiste en emplear código existente en diferentes contextos o proyectos, evitando duplicaciones. Se refiere a la capacidad de utilizar las mismas piezas de código en diferentes partes del programa o en diferentes proyectos.
 
 ### Beneficios
 - Reducción de errores y duplicaciones.
 - Mayor rapidez en el desarrollo.
 - Código más consistente y probado.
-
-### Ejemplo de reutilización mediante herencia
-```java
-
-```
-
-Aquí `CalculadoraAvanzada` reutiliza todos los métodos de `Calculadora` y añade nuevas funcionalidades.
-
----
 
 ## Conclusión
 - La **modularidad** favorece el orden y la claridad.  
@@ -85,3 +48,7 @@ Aquí `CalculadoraAvanzada` reutiliza todos los métodos de `Calculadora` y aña
 - Las **interfaces** aportan flexibilidad para diseñar sistemas más escalables.
 
 Estos principios son fundamentales en la **Programación Orientada a Objetos (POO)** y constituyen la base de un software robusto y adaptable.
+
+**[Ejemplos prácticos 1](02_codigos1.md)**
+
+**[Ejemplos prácticos 2](02_codigos2.md)**
