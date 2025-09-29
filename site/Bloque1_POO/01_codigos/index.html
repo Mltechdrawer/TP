@@ -863,6 +863,7 @@ abstract class Figura {
 // Subclase 1: Circulo
 class Circulo extends Figura {
     private final double radio;
+    //Especializa la figura para un círculo
     Circulo(double radio) {
         super(&quot;círculo&quot;);
         this.radio = radio;
@@ -871,9 +872,10 @@ class Circulo extends Figura {
     @Override public void dibujar() { System.out.println(&quot;Dibujando un círculo&quot;); }
 }
 
-// Subclase 2: Rectangulo
+// Subclase 2: Rectángulo
 class Rectangulo extends Figura {
     private final double ancho, alto;
+    // Especializa la figura para un rectángulo
     Rectangulo(double ancho, double alto) {
         super(&quot;rectángulo&quot;);
         this.ancho = ancho; this.alto = alto;
@@ -894,16 +896,42 @@ public class Main {
         }
 
         // Otra muestra de polimorfismo en un método que recibe la superclase
-        procesar(new Circulo(5.0));
-        procesar(new Rectangulo(2.0, 6.0));
-    }
 
+        procesar(new Circulo(5.0));       // usa procesar(Figura f)
+        procesar(new Rectangulo(2.0, 6.0)); // usa procesar(Figura f)
+        procesar(new Circulo(3.0), &quot;extra&quot;); // usa procesar(Circulo c, String msg)
+    }
+    // Polimorfismo dinámico (sobrescritura)
     static void procesar(Figura f) {
+        // procesar se resuelve en tiempo de compilación
         System.out.println(&quot;Procesando &quot; + f.getClass().getSimpleName()
                            + &quot; con área &quot; + f.area());
+                           //f.area se resuelve en tiempo de ejecución
+    }
+    // Sobrecarga específica para Circulo
+    static void procesar(Circulo c) {
+        System.out.println(&quot;Procesando específicamente un círculo con radio &quot;
+                           + c.area());
+    }
+
+    // Otra sobrecarga con parámetros adicionales
+    // Esta es una sobrecarga estática, se decide en tiempo de compilación porque los parámetros coinciden exactamente
+    static void procesar(Circulo c, String msg) {
+        System.out.println(&quot;Procesando círculo con mensaje: &quot; + msg 
+                           + &quot; y área &quot; + c.area());
     }
 }
 </code></pre>
+<hr />
+<details>
+<summary>💡 Overrride vs Overload </summary>
+<p><strong> Override (area(), dibujar()): </strong></p>
+<p> - Misma firma que en la superclase. </p>
+<p> - Decide en tiempo de ejecución qué versión usar. </p>
+<p><strong> Overload (procesar(Figura), procesar(Circulo), procesar(Circulo,String)): </strong></p>
+<p> - Mismo nombre, distinta lista de parámetros. </p>
+<p> - Decide en tiempo de compilación qué versión usar. </p>
+</details>
 <hr />
 <h3 id="clases-y-objetos">Clases y objetos</h3>
 <hr />

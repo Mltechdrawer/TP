@@ -52,3 +52,7 @@ Estos principios son fundamentales en la **Programación Orientada a Objetos (PO
 **[Ejemplos prácticos 1](02_codigos1.md)**
 
 **[Ejemplos prácticos 2](02_codigos2.md)**
+
+**[Ejemplos prácticos 3](02_codigos3.md)**
+
+**[Ejemplos prácticos 4](02_codigos4.md)**

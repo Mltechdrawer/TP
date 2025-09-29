@@ -1,0 +1,1248 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Modularidad, Herencia y Reusabilidad - Tecnologías de Programación (TP)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../styles/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modularidad-herencia-y-reusabilidad" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Tecnologías de Programación (TP)" class="md-header__button md-logo" aria-label="Tecnologías de Programación (TP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tecnologías de Programación (TP)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modularidad, Herencia y Reusabilidad
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tecnologías de Programación (TP)" class="md-nav__button md-logo" aria-label="Tecnologías de Programación (TP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Tecnologías de Programación (TP)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contenidos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contenidos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 1. Conceptos avanzados de POO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 1. Conceptos avanzados de POO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_repaso_poo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Repaso de POO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_modularidad_herencia_reusabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modularidad herencia y reusabilidad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_genericidad_contenedores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Genericidad y contenedores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 2. Programación guiada por eventos e interfaz gráfica
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 2. Programación guiada por eventos e interfaz gráfica
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_Eventos_GUI/01_eventos_clases_anidadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eventos y clases anidadas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_Eventos_GUI/02_interfaz_grafica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interfaz gráfica de usuarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque2_Eventos_GUI/03_componentes_layouts_navegacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Componentes, layouts y navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bloque 3. Programación concurrente y distribuida
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bloque 3. Programación concurrente y distribuida
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Concurrente_Distribuida/01_concurrencia_sincronizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concurrencia y sincronización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Concurrente_Distribuida/02_comunicacion_paralelismo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comunicación entre hilos y paralelismo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bloque3_Concurrente_Distribuida/03_programacion_distribuida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a la programación distribuida
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definiciones-y-ejemplos-ilustrativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definiciones y ejemplos ilustrativos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definiciones y ejemplos ilustrativos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-primitivos-paso-por-valor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos primitivos - paso por valor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objetos-paso-por-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos - paso por referencia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-por-referencia-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso por referencia. Ejemplo.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculadora-secuencial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculadora secuencial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculadora-orientada-a-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculadora orientada a objetos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculadora-orientada-a-objetos-potencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculadora orientada a objetos - potencia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculadora-orientada-a-objetos-potencia-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculadora orientada a objetos - potencia - interfaz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-de-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de módulos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relación real
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diferencias-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diferencias clave
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="modularidad-herencia-y-reusabilidad">Modularidad, Herencia y Reusabilidad</h1>
+<h2 id="definiciones-y-ejemplos-ilustrativos">Definiciones y ejemplos ilustrativos</h2>
+<h3 id="tipos-primitivos-paso-por-valor">Tipos primitivos - paso por valor</h3>
+<pre><code class="language-java">public class PasoPorValorPrimitivo {
+    public static void main(String[] args) {
+        int numero = 10;
+        cambiarValor(numero);
+        System.out.println(&quot;Valor después de llamar al método: &quot; + numero); // Imprime 10
+    }
+
+    public static void cambiarValor(int valor) {
+        valor = 20; // Esta modificación no afecta a 'numero' en el método main
+    }
+}
+// En los tipos de datos primitivos se pasa una copia del valor.
+</code></pre>
+<details>
+<summary>💡 Paso de parámetros</summary>
+<p>En los tipos de datos primitivos se pasa una copia del valor. </p>
+</details>
+
+<h3 id="objetos-paso-por-referencia">Objetos - paso por referencia</h3>
+<pre><code class="language-java">public class PasoPorValorReferencia {
+    public static void main(String[] args) {
+        MiObjeto objeto = new MiObjeto();
+        objeto.valor = 10;
+
+        modificarObjeto(objeto);
+        System.out.println(&quot;Valor después de llamar al método: &quot; + objeto.valor); // Imprime 20
+    }
+
+    public static void modificarObjeto(MiObjeto obj) {
+        obj.valor = 20; // Modifica el valor del objeto original
+    }
+}
+
+class MiObjeto {
+    int valor;
+}
+
+</code></pre>
+<details>
+<summary>💡 Paso de parámetros</summary>
+<p>En los objtos se pasa una copia de la referncia, por lo que ambos apuntan al mismo objeto. 
+Esto permite modificar el objeto original a través de la referencia. </p>
+</details>
+<hr />
+<h3 id="paso-por-referencia-ejemplo">Paso por referencia. Ejemplo.</h3>
+<pre><code class="language-java">public class ReferenciaEjemplo {
+    public static void main(String[] args) {
+        // Creamos un objeto de la clase String
+        String mensaje = &quot;Hola, mundo&quot;;
+
+        // Creamos otra referencia que apunta al mismo objeto
+        String otraReferencia = mensaje;
+
+        // Mostramos el contenido de ambas referencias
+        System.out.println(&quot;Mensaje original: &quot; + mensaje);
+        System.out.println(&quot;Otra referencia: &quot; + otraReferencia);
+
+        // Modificamos la referencia 'mensaje'
+        mensaje = &quot;Nuevo mensaje&quot;;
+
+        // Mostramos el contenido después de la modificación
+        System.out.println(&quot;Mensaje después de modificar: &quot; + mensaje);
+        System.out.println(&quot;Contenido de otra referencia: &quot; + otraReferencia);
+    }
+}
+</code></pre>
+<hr />
+<h3 id="calculadora-secuencial">Calculadora secuencial</h3>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class CalculadoraSecuencial {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar el primer número
+        System.out.println(&quot;Ingrese el primer número:&quot;);
+        double num1 = scanner.nextDouble();
+
+        // Solicitar el segundo número
+        System.out.println(&quot;Ingrese el segundo número:&quot;);
+        double num2 = scanner.nextDouble();
+
+        // Solicitar la operación a realizar
+        System.out.println(&quot;Ingrese la operación (+, -, *, /):&quot;);
+        char operacion = scanner.next().charAt(0);
+
+        // Variable para almacenar el resultado
+        double resultado = 0;
+
+        // Realizar la operación
+        switch (operacion) {
+            case '+':
+                resultado = num1 + num2;
+                break;
+            case '-':
+                resultado = num1 - num2;
+                break;
+            case '*':
+                resultado = num1 * num2;
+                break;
+            case '/':
+                if (num2 != 0) {
+                    resultado = num1 / num2;
+                } else {
+                    System.out.println(&quot;Error: División por cero no permitida.&quot;);
+                    return;
+                }
+                break;
+            default:
+                System.out.println(&quot;Operación no válida.&quot;);
+                return;
+        }
+
+        // Mostrar el resultado
+        System.out.println(&quot;El resultado es: &quot; + resultado);
+    }
+}
+</code></pre>
+<hr />
+<h3 id="calculadora-orientada-a-objetos">Calculadora orientada a objetos</h3>
+<pre><code class="language-java">import java.util.Scanner;
+
+// Clase Calculadora con los métodos para cada operación
+class Calculadora {
+    // Método para sumar
+    public double sumar(double a, double b) {
+        return a + b;
+    }
+
+    // Método para restar
+    public double restar(double a, double b) {
+        return a - b;
+    }
+
+    // Método para multiplicar
+    public double multiplicar(double a, double b) {
+        return a * b;
+    }
+
+    // Método para dividir
+    public double dividir(double a, double b) {
+        if (b == 0) {
+            System.out.println(&quot;Error: División por cero no permitida.&quot;);
+            return 0; // O lanzar una excepción dependiendo del caso
+        }
+        return a / b;
+    }
+}
+
+public class CalculadoraOrientadaObjetos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Calculadora calculadora = new Calculadora();
+
+        // Solicitar el primer número
+        System.out.println(&quot;Ingrese el primer número:&quot;);
+        double num1 = scanner.nextDouble();
+
+        // Solicitar el segundo número
+        System.out.println(&quot;Ingrese el segundo número:&quot;);
+        double num2 = scanner.nextDouble();
+
+        // Solicitar la operación a realizar
+        System.out.println(&quot;Ingrese la operación (+, -, *, /):&quot;);
+        char operacion = scanner.next().charAt(0);
+
+        // Variable para almacenar el resultado
+        double resultado = 0;
+
+        // Realizar la operación mediante los métodos de la clase Calculadora
+        switch (operacion) {
+            case '+':
+                resultado = calculadora.sumar(num1, num2);
+                break;
+            case '-':
+                resultado = calculadora.restar(num1, num2);
+                break;
+            case '*':
+                resultado = calculadora.multiplicar(num1, num2);
+                break;
+            case '/':
+                resultado = calculadora.dividir(num1, num2);
+                break;
+            default:
+                System.out.println(&quot;Operación no válida.&quot;);
+                return;
+        }
+
+        // Mostrar el resultado
+        System.out.println(&quot;El resultado es: &quot; + resultado);
+    }
+}
+
+</code></pre>
+<details>
+<summary>💡 Detalles</summary>
+<p>La clase Calculadora encapsula toda la lógica de las operaciones matemáticas. Esto significa que la funcionalidad está agrupada en un único lugar y separada de otras partes del programa (como la entrada y salida de datos en el main). </p>
+<p><strong>Ventaja</strong> Si un módulo (la clase Calculadora) tiene un fallo o necesita ser mejorado, es fácil modificarlo sin afectar a otras partes del código. Esto facilita la <strong>localización de errores</strong> y la <strong>evolución del software</strong>.</p>
+</details>
+<hr />
+<h3 id="calculadora-orientada-a-objetos-potencia">Calculadora orientada a objetos - potencia</h3>
+<pre><code class="language-java">// Aprovechamos la modularidad incluyendo el método potencia en la clase calculadora
+// de esta forma se pueden agregar nuevas funcionalidades sin alterar significativamente
+// la estructura del programa.
+
+import java.util.Scanner;
+
+// Clase Calculadora con los métodos para cada operación
+class Calculadora {
+    // Método para sumar
+    public double sumar(double a, double b) {
+        return a + b;
+    }
+
+    // Método para restar
+    public double restar(double a, double b) {
+        return a - b;
+    }
+
+    // Método para multiplicar
+    public double multiplicar(double a, double b) {
+        return a * b;
+    }
+
+    // Método para dividir
+    public double dividir(double a, double b) {
+        if (b == 0) {
+            System.out.println(&quot;Error: División por cero no permitida.&quot;);
+            return 0; // O lanzar una excepción dependiendo del caso
+        }
+        return a / b;
+    }
+
+    // Nuevo método para calcular la potencia
+    public double potencia(double base, double exponente) {
+        return Math.pow(base, exponente);
+    }
+}
+
+public class CalculadoraOrientadaObjetosPotencia {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Calculadora calculadora = new Calculadora();
+
+        // Solicitar el primer número
+        System.out.println(&quot;Ingrese el primer número:&quot;);
+        double num1 = scanner.nextDouble();
+
+        // Solicitar el segundo número
+        System.out.println(&quot;Ingrese el segundo número:&quot;);
+        double num2 = scanner.nextDouble();
+
+        // Solicitar la operación a realizar
+        System.out.println(&quot;Ingrese la operación (+, -, *, /, ^):&quot;);
+        char operacion = scanner.next().charAt(0);
+
+        // Variable para almacenar el resultado
+        double resultado = 0;
+
+        // Realizar la operación mediante los métodos de la clase Calculadora
+        switch (operacion) {
+            case '+':
+                resultado = calculadora.sumar(num1, num2);
+                break;
+            case '-':
+                resultado = calculadora.restar(num1, num2);
+                break;
+            case '*':
+                resultado = calculadora.multiplicar(num1, num2);
+                break;
+            case '/':
+                resultado = calculadora.dividir(num1, num2);
+                break;
+            case '^':  // Nueva operación para calcular la potencia
+                resultado = calculadora.potencia(num1, num2);
+                break;
+            default:
+                System.out.println(&quot;Operación no válida.&quot;);
+                return;
+        }
+
+        // Mostrar el resultado
+        System.out.println(&quot;El resultado es: &quot; + resultado);
+    }
+}
+
+</code></pre>
+<details>
+<summary>💡 Detalles</summary>
+<p>La clase Calculadora puede ser utilizada en otros programas. Si en alún otro sistema es necesario realizar operaciones mátemáticas, se podría integrar fácilmente la clase sin necesidad de reescribir la lógica. </p>
+<p><strong>Ventajas:</strong> </p>
+<p>- Reutilización. Evita la duplicación de código, lo que mejora la eficiencia y reduce la posibilidad de errores.</p>
+<p>- Mantenimiento. Si el código crece o cambia, se puede realizar sin modificar el flujo principal de la aplicación. Además, cualquier corrección que se deba hacer se puede realizar directamente en la clase Calculadora sin tocar otras partes del código. El código estará mejor organizado.</p>
+<p>- Flexibilidad. Se puede extender la clase Calculadora sin modificarla directamente, utilizando herencia o composición. Se podría crear una nueva clase, como CalculadoraAvanzada, que extienda la funcionalidad de la calculadora básica, y siga reutilizando el código existente.</p>
+<p>- Encapsulamiento. La lógica de cada operación (suma, resta, multiplicación y división) está contenida dentro de métodos privados a la clase Calculadora. Esto significa que el main no necesita saber cómo se implementa cada operación; solo llama a los métodos correspondientes. Al ocultar los detalles internos, el código que interactúa con la clase Calculadora (como el código del main) es más simple y menos propenso a errores. Además, si cambia la implementación interna (por ejemplo, optimizando el cálculo de la multiplicación), el resto del programa no se ve afectado.</p>
+<p>- Escalabilidad. La capacidad para adaptarse al crecimiento, tanto en tamaño como en complejidad. : La estructura orientada a objetos es naturalmente más escalable. A medida que el programa crezca (por ejemplo, añadiendo nuevas funciones o integraciones), se pueden mantener las operaciones matemáticas en la clase Calculadora o derivarlas a subclases especializadas sin tener que reestructurar el flujo general del programa.</p>
+</details>
+<hr />
+<h3 id="calculadora-orientada-a-objetos-potencia-interfaz">Calculadora orientada a objetos - potencia - interfaz</h3>
+<pre><code class="language-java">import java.util.Scanner;
+
+// Interfaz Operacion que define un método para ejecutar cualquier operación
+interface Operacion {
+    double ejecutar(double a, double b);
+}
+
+// Clase para sumar
+class Suma implements Operacion {
+    @Override
+    public double ejecutar(double a, double b) {
+        return a + b;
+    }
+}
+
+// Clase para restar
+class Resta implements Operacion {
+    @Override
+    public double ejecutar(double a, double b) {
+        return a - b;
+    }
+}
+
+// Clase para multiplicar
+class Multiplicacion implements Operacion {
+    @Override
+    public double ejecutar(double a, double b) {
+        return a * b;
+    }
+}
+
+// Clase para dividir
+class Division implements Operacion {
+    @Override
+    public double ejecutar(double a, double b) {
+        if (b == 0) {
+            System.out.println(&quot;Error: División por cero no permitida.&quot;);
+            return 0;
+        }
+        return a / b;
+    }
+}
+
+// Clase para potencia
+class Potencia implements Operacion {
+    @Override
+    public double ejecutar(double base, double exponente) {
+        return Math.pow(base, exponente);
+    }
+}
+
+// Clase Calculadora que usa la interfaz Operacion
+class Calculadora {
+    public double operar(Operacion operacion, double a, double b) {
+        return operacion.ejecutar(a, b);
+    }
+}
+
+public class CalculadoraOrientadaObjetosPotenciaInterfaz {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Calculadora calculadora = new Calculadora();
+
+        // Solicitar el primer número
+        System.out.println(&quot;Ingrese el primer número:&quot;);
+        double num1 = scanner.nextDouble();
+
+        // Solicitar el segundo número
+        System.out.println(&quot;Ingrese el segundo número:&quot;);
+        double num2 = scanner.nextDouble();
+
+        // Solicitar la operación a realizar
+        System.out.println(&quot;Ingrese la operación (+, -, *, /, ^):&quot;);
+        char operacion = scanner.next().charAt(0);
+
+        // Variable para almacenar el resultado
+        double resultado = 0;
+
+        // Definir la operación basada en la entrada
+        Operacion op = null;
+        switch (operacion) {
+            case '+':
+                op = new Suma();
+                break;
+            case '-':
+                op = new Resta();
+                break;
+            case '*':
+                op = new Multiplicacion();
+                break;
+            case '/':
+                op = new Division();
+                break;
+            case '^':
+                op = new Potencia();
+                break;
+            default:
+                System.out.println(&quot;Operación no válida.&quot;);
+                return;
+        }
+
+        // Realizar la operación mediante la interfaz Operacion
+        if (op != null) {
+            resultado = calculadora.operar(op, num1, num2);
+        }
+
+        // Mostrar el resultado
+        System.out.println(&quot;El resultado es: &quot; + resultado);
+    }
+}
+</code></pre>
+<hr />
+<h2 id="diagrama-de-modulos">Diagrama de módulos</h2>
+<p><img alt="Diagrama de módulos" src="../diagramamodulos.png" title="Diagrama de módulos" /></p>
+<h2 id="relacion-real">Relación real</h2>
+<ul>
+<li>La clase <strong>Calculadora</strong> es una clase independiente que contiene los métodos para realizar las operaciones básicas (suma, resta, multiplicación y división).  </li>
+<li>La clase <strong>CalculadoraOrientadaObjetos</strong> es simplemente la clase principal donde se solicita la entrada del usuario y se utiliza un objeto de la clase <strong>Calculadora</strong> para realizar las operaciones.  </li>
+</ul>
+<hr />
+<h2 id="interaccion">Interacción</h2>
+<p>La clase <strong>CalculadoraOrientadaObjetos</strong> crea una instancia de <strong>Calculadora</strong> y llama a sus métodos.<br />
+Es un ejemplo de <strong>composición</strong> (usar un objeto dentro de otro) y no de <strong>herencia</strong>.  </p>
+<hr />
+<h2 id="diferencias-clave">Diferencias clave</h2>
+<ul>
+<li><strong>Herencia</strong>: Una clase hija hereda los métodos y propiedades de la clase padre, y puede sobreescribir o extender la funcionalidad de la clase padre.  </li>
+<li><strong>Composición</strong>: Una clase contiene una instancia de otra clase y utiliza sus métodos, pero no hereda de ella.  </li>
+</ul>
+<p>En este caso, la clase principal (<strong>CalculadoraOrientadaObjetos</strong>) utiliza la clase <strong>Calculadora</strong>, pero no es una subclase de ella.  </p>
+<details>
+<summary>💡 extends</summary>
+<p>Solo puedes <strong>extender de UNA sola clase</strong> (Java no permite herencia múltiple de clases).</p>
+<p>Heredas atributos y métodos de la superclase.</p>
+<p>Puedes <strong>sobrescribir (override)</strong> métodos para dar un comportamiento específico.</p>
+<p>Puedes añadir nuevos atributos o métodos.</p>
+<p>extends significa: <i>soy un tipo más específico de esa clase</i>.</p>
+</details>
+
+<hr />
+<details>
+<summary>💡 implements</summary>
+<p>Una interfaz define un <strong>contrato</strong> (qué métodos debe tener la clase), pero no la implementación.</p>
+<p>Una clase puede <strong>implementar varias interfaces</strong> → es la forma de tener <i>herencia múltiple</i> en Java.</p>
+<p>Obliga a la clase a implementar todos los métodos declarados en la interfaz (salvo que la clase sea abstracta).</p>
+<p>Puedes añadir nuevos atributos o métodos.</p>
+<p>implements significa: <i>cumplo el contrato de esta interfaz</i>.</p>
+</details>
+
+<hr />
+<h2 id="conclusion">Conclusión</h2>
+<p>Esto significa que la relación entre ambas clases es de <strong>uso o colaboración</strong>, y no de herencia.  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

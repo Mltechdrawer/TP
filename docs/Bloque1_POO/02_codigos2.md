@@ -254,9 +254,3 @@ public class UsaCilindro {
     }
 }
 ```
-
-<details>
-<summary>💡 Detalles </summary>
-<p> Detalles. </p>
-</details>
-
