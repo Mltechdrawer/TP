@@ -1,4 +1,4 @@
-# Modularidad, Herencia y Reusabilidad  -- s4-d1
+# Modularidad, Herencia y Reusabilidad
 
 ## Definiciones y ejemplos ilustrativos
 

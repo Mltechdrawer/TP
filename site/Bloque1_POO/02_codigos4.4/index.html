@@ -16,7 +16,7 @@
     
     
       
-        <title>Modularidad, Herencia y Reusabilidad -- s4-d2 - Tecnologías de Programación (TP)</title>
+        <title>Modularidad, Herencia y Reusabilidad - Tecnologías de Programación (TP)</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modularidad-herencia-y-reusabilidad-s4-d2" class="md-skip">
+        <a href="#modularidad-herencia-y-reusabilidad" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modularidad, Herencia y Reusabilidad -- s4-d2
+              Modularidad, Herencia y Reusabilidad
             
           </span>
         </div>
@@ -608,18 +608,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#conceptos-fundamentales-de-la-programacion-orientada-a-objetos" class="md-nav__link">
+  <a href="#atributos-de-clase" class="md-nav__link">
     <span class="md-ellipsis">
-      Conceptos fundamentales de la programación orientada a objetos
+      Atributos de clase
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#atributos-y-metodos-de-clase" class="md-nav__link">
+  <a href="#metodos-de-clase" class="md-nav__link">
     <span class="md-ellipsis">
-      Atributos y métodos de clase.
+      Métodos de clase
     </span>
   </a>
   
@@ -635,9 +635,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#patron-singleton" class="md-nav__link">
+  <a href="#singleton" class="md-nav__link">
     <span class="md-ellipsis">
-      Patrón Singleton
+      Singleton
     </span>
   </a>
   
@@ -664,38 +664,124 @@
 
 
 
-<h1 id="modularidad-herencia-y-reusabilidad-s4-d2">Modularidad, Herencia y Reusabilidad  -- s4-d2</h1>
+<h1 id="modularidad-herencia-y-reusabilidad">Modularidad, Herencia y Reusabilidad</h1>
 <h2 id="definiciones-y-ejemplos-ilustrativos">Definiciones y ejemplos ilustrativos</h2>
-<h3 id="conceptos-fundamentales-de-la-programacion-orientada-a-objetos">Conceptos fundamentales de la programación orientada a objetos</h3>
-<h3 id="atributos-y-metodos-de-clase">Atributos y métodos de clase.</h3>
-<p>En Java, los <strong>atributos y métodos de clase</strong> son aquellos declarados con la palabra clave <strong>static</strong>.<br />
-Los atributos de clase representan valores compartidos por todas las instancias de la clase (por ejemplo, un contador de objetos creados), mientras que los métodos de clase son funciones que se pueden invocar sin necesidad de crear un objeto (por ejemplo, Math.sqrt()).<br />
-Se deben usar cuando la información o el comportamiento no dependen de un objeto concreto, sino de la clase en general, facilitando así recursos comunes, utilidades o constantes accesibles globalmente.</p>
-<details>
-<summary>💡 Atributos de clase </summary>
-<p> Se usan atributos de clase (static) cuando la información debe ser compartida entre todas las instancias o cuando el dato no pertenece a una instancia específica.</p>
-</details>
+<h3 id="atributos-de-clase">Atributos de clase</h3>
+<pre><code class="language-java">public class Contador {
+    private static int numInstancias = 0; // Atributo de clase
 
-<p><strong><a href="../02_codigos4.4/#atributos-de-clase">Atributos de clase</a></strong></p>
-<details>
-<summary>💡 Métodos de clase </summary>
-<p> Se usan métodos de clase (static) cuando la funcionalidad no depende del estado de una instancia y puede ejecutarse sin necesidad de crear un objeto.</p>
-</details>
+    public Contador() {
+        numInstancias++; // Incrementar contador en cada nueva instancia
+    }
 
-<p><strong><a href="../02_codigos4.4/#metodos-de-clase">Atributos de clase</a></strong></p>
+    // Método de clase para obtener el número de instancias creadas
+    public static int getNumInstancias() {
+        return numInstancias;
+    }
+
+    public static void main(String[] args) {
+        new Contador(); // Primera instancia
+        new Contador(); // Segunda instancia
+
+        System.out.println(&quot;Número de instancias creadas: &quot; + Contador.getNumInstancias());
+        // Output: Número de instancias creadas: 2
+    }
+}
+</code></pre>
+<hr />
+<h3 id="metodos-de-clase">Métodos de clase</h3>
+<pre><code class="language-java">public class Calculadora {
+    // Método de clase para calcular el cuadrado de un número
+    // No es necesario acceder ni modificar los atributos de una instancia específica
+    // No es necesario crear un objeto
+    public static int calcularCuadrado(int numero) {
+        return numero * numero;
+    }
+
+    public static void main(String[] args) {
+        int resultado = Calculadora.calcularCuadrado(5);
+        System.out.println(&quot;El cuadrado de 5 es: &quot; + resultado);
+        // Output: El cuadrado de 5 es: 25
+    }
+}
+</code></pre>
+<hr />
 <h3 id="constantes">Constantes</h3>
-<p>En Java, las <strong>constantes</strong> son variables cuyo valor no puede modificarse una vez asignado. Se definen con los modificadores static final, lo que significa que pertenecen a la clase (y no a instancias específicas) y que su valor es inmutable.  </p>
-<details>
-<summary>💡 Constantes </summary>
-<p> Por convención, los nombres de las constantes se escriben en mayúsculas y con guiones bajos para separar palabras, como PI, MAX_VALUE o DEFAULT_TIMEOUT.</p>
-<p> Se utilizan para representar valores fijos y universales en el programa, mejorando la legibilidad y evitando errores asociados a la duplicación de <i>números mágicos</i> o cadenas repetidas en el código.</p>
-</details>
+<pre><code class="language-java">public class Constantes {
+    public static final double PI = 3.141592653589793;
 
-<p><strong><a href="../02_codigos4.4/#constantes">Atributos de clase</a></strong></p>
-<h3 id="patron-singleton">Patrón Singleton</h3>
-<p>El patrón <strong>Singleton</strong> es un <strong>patrón de diseño creacional</strong> que garantiza que solo exista una única instancia de una clase en todo el sistema y que, además, sea fácilmente accesible desde cualquier parte del programa.<br />
-En Java, se implementa declarando el constructor como privado (para evitar que se creen instancias desde fuera) y proporcionando un método público y estático que devuelve siempre la misma instancia (por ejemplo, getInstance()).<br />
-Se suele usar cuando es necesario un único punto de acceso a un recurso compartido, como un gestor de configuración, un logger, una conexión a base de datos o un manejador de hilos.</p>
+    public static void main(String[] args) {
+        System.out.println(&quot;Valor de PI: &quot; + Constantes.PI);
+    }
+}
+</code></pre>
+<hr />
+<h3 id="singleton">Singleton</h3>
+<pre><code class="language-java">// Ejemplo básico de Singleton en Java
+public class Configuracion {
+
+    // 1. Atributo estático que guarda la única instancia
+    private static Configuracion instancia;
+
+    // 2. Constructor privado → evita crear objetos desde fuera
+    private Configuracion() {
+        System.out.println(&quot;Inicializando configuración...&quot;);
+    }
+
+    // 3. Método público estático para obtener la instancia
+    public static Configuracion getInstance() {
+        if (instancia == null) {
+            // Si aún no existe, se crea
+            instancia = new Configuracion();
+        }
+        // Siempre devuelve la misma instancia
+        return instancia;
+    }
+
+    // 4. Métodos de ejemplo
+    public void mostrarMensaje() {
+        System.out.println(&quot;Usando la misma configuración en toda la aplicación&quot;);
+    }
+}
+
+// Ejemplo de uso
+public class Main {
+    public static void main(String[] args) {
+        Configuracion c1 = Configuracion.getInstance();
+        Configuracion c2 = Configuracion.getInstance();
+
+        c1.mostrarMensaje();
+
+        // Verificación: ambas referencias apuntan al mismo objeto
+        System.out.println(c1 == c2); // true
+    }
+}
+</code></pre>
+<pre><code class="language-java">public class Singleton {
+    private static Singleton instanciaUnica;
+
+    // Constructor privado para evitar la creación de nuevas instancias
+    private Singleton() {}
+
+    // Método de clase para obtener la instancia única
+    public static Singleton obtenerInstancia() {
+        if (instanciaUnica == null) {
+            instanciaUnica = new Singleton();
+        }
+        return instanciaUnica;
+    }
+
+    public void mostrarMensaje() {
+        System.out.println(&quot;Esta es la única instancia de Singleton.&quot;);
+    }
+
+    public static void main(String[] args) {
+        Singleton instancia = Singleton.obtenerInstancia();
+        instancia.mostrarMensaje();
+    }
+}
+</code></pre>
+<hr />
 
 
 
