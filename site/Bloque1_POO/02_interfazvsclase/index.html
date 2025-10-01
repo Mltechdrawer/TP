@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../01_repaso_poo/">
-      
-      
-        <link rel="next" href="../03_genericidad_contenedores/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Modularidad herencia y reusabilidad - Tecnologías de Programación (TP)</title>
+        <title>Interfaz vs clase - Tecnologías de Programación (TP)</title>
       
     
     
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modularidad-herencia-y-reusabilidad" class="md-skip">
+        <a href="#interfaz-vs-clase" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modularidad herencia y reusabilidad
+              Interfaz vs clase
             
           </span>
         </div>
@@ -237,20 +233,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -266,7 +260,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Bloque 1. Conceptos avanzados de POO
@@ -300,32 +294,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Modularidad herencia y reusabilidad
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../02_modularidad_herencia_reusabilidad/" class="md-nav__link">
         
   
   
@@ -336,134 +308,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduccion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introducción
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modularidad" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modularidad
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modularidad">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#caracteristicas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Características
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#herencia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Herencia
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Herencia">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conceptos-clave" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conceptos clave
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#polimorfismo-y-clases-abstractas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Polimorfismo y Clases Abstractas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interfaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interfaces
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reusabilidad" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reusabilidad
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reusabilidad">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#beneficios" class="md-nav__link">
-    <span class="md-ellipsis">
-      Beneficios
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusión
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -747,122 +591,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduccion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introducción
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modularidad" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modularidad
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modularidad">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#caracteristicas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Características
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#herencia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Herencia
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Herencia">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conceptos-clave" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conceptos clave
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#polimorfismo-y-clases-abstractas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Polimorfismo y Clases Abstractas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interfaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interfaces
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reusabilidad" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reusabilidad
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reusabilidad">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#beneficios" class="md-nav__link">
-    <span class="md-ellipsis">
-      Beneficios
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusión
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -877,51 +605,129 @@
 
 
 
-<h1 id="modularidad-herencia-y-reusabilidad">Modularidad, Herencia y Reusabilidad</h1>
-<h2 id="introduccion">Introducción</h2>
-<p>En el desarrollo de software, conceptos como <strong>modularidad</strong>, <strong>herencia</strong> y <strong>reusabilidad</strong> son esenciales para crear programas más claros, mantenibles y escalables. Estos principios permiten organizar el código, reducir la duplicación y facilitar la evolución de los proyectos.</p>
+<h1 id="interfaz-vs-clase">Interfaz vs clase</h1>
+<pre><code class="language-java">// -------------
+// 1) Interfaz
+// -------------
+interface RecetaSalsa {
+    String getNombre();
+    void preparar();
+}
+
+// --------------------------------------
+// 2) Clases que implementan la interfaz
+// --------------------------------------
+class SalsaTomate implements RecetaSalsa {
+    @Override
+    public String getNombre() {
+        return &quot;Salsa de Tomate&quot;;
+    }
+
+    @Override
+    public void preparar() {
+        System.out.println(&quot;Preparando salsa de tomate con tomates, aceite y sal.&quot;);
+    }
+}
+
+class SalsaPesto implements RecetaSalsa {
+    @Override
+    public String getNombre() {
+        return &quot;Salsa Pesto&quot;;
+    }
+
+    @Override
+    public void preparar() {
+        System.out.println(&quot;Preparando salsa pesto con albahaca, piñones y parmesano.&quot;);
+    }
+}
+
+// ----------------------------
+// 3) Clase base con herencia
+// ----------------------------
+class SalsaBase {
+    protected String nombre;
+    protected String[] ingredientes;
+
+    public SalsaBase(String nombre, String[] ingredientes) {
+        this.nombre = nombre;
+        this.ingredientes = ingredientes;
+    }
+
+    public void mostrarIngredientes() {
+        System.out.print(nombre + &quot; lleva: &quot;);
+        for (int i = 0; i &lt; ingredientes.length; i++) {
+            System.out.print(ingredientes[i]);
+            if (i &lt; ingredientes.length - 1) System.out.print(&quot;, &quot;);
+        }
+        System.out.println(&quot;.&quot;);
+    }
+}
+
+// -----------------------------------
+// 4) Clases que heredan de SalsaBase
+// -----------------------------------
+class SalsaCarbonara extends SalsaBase {
+    public SalsaCarbonara() {
+        //Usamos super para invocar al constructor de la clase base
+        super(&quot;Salsa Carbonara&quot;, new String[]{&quot;nata&quot;, &quot;huevo&quot;, &quot;queso&quot;, &quot;panceta&quot;});
+    }
+}
+
+class SalsaBolonesa extends SalsaBase {
+    public SalsaBolonesa() {
+        super(&quot;Salsa Bolonesa&quot;, new String[]{&quot;carne&quot;, &quot;tomate&quot;, &quot;cebolla&quot;, &quot;zanahoria&quot;});
+    }
+}
+
+// -------------------
+// 5) Clase principal
+// -------------------
+public class SalsasDemo {
+    public static void main(String[] args) {
+        // Uso de la interfaz
+        RecetaSalsa r1 = new SalsaTomate();
+        RecetaSalsa r2 = new SalsaPesto();
+
+        System.out.println(&quot;=== Usando la interfaz RecetaSalsa ===&quot;);
+        r1.preparar();
+        r2.preparar();
+
+        // Uso de la clase base
+        SalsaBase s1 = new SalsaCarbonara();
+        SalsaBase s2 = new SalsaBolonesa();
+
+        System.out.println(&quot;\n=== Usando la clase base SalsaBase ===&quot;);
+        s1.mostrarIngredientes();
+        s2.mostrarIngredientes();
+    }
+}
+
+</code></pre>
+<details>
+<summary>💡 Diferencias </summary>
+<p><strong>Métodos sobrescritos (en herencia o implementación)</strong> → siempre runtime (dynamic dispatch).</p>
+<p><strong>Métodos estáticos, privados o finales</strong> → resueltos en compilación / no-polimórficos.</p>
+<p><strong>Diferencia real:</strong> extends usa invokevirtual, implements usa invokeinterface.</p>
+</details>
+
 <hr />
-<h2 id="modularidad">Modularidad</h2>
-<p>La <strong>modularidad</strong> consiste en dividir un programa en componentes o módulos independientes, de manera que cada uno tenga una responsabilidad clara.</p>
-<h3 id="caracteristicas">Características</h3>
-<ul>
-<li>Un módulo puede desarrollarse, probarse y mantenerse de forma aislada.</li>
-<li>Facilita localizar y corregir errores.</li>
-<li>Permite ampliar la funcionalidad sin afectar a todo el sistema.</li>
-</ul>
-<h2 id="herencia">Herencia</h2>
-<p>La <strong>herencia</strong> permite definir nuevas clases basadas en otras ya existentes, reutilizando atributos y métodos y añadiendo o especializando funcionalidades.</p>
-<h3 id="conceptos-clave">Conceptos clave</h3>
-<ul>
-<li><strong>Superclase (clase base)</strong>: clase original de la que heredan otras.</li>
-<li><strong>Subclase (clase derivada)</strong>: clase que extiende la funcionalidad de la superclase.</li>
-</ul>
-<h2 id="polimorfismo-y-clases-abstractas">Polimorfismo y Clases Abstractas</h2>
-<p>El <strong>polimorfismo</strong> permite que una misma referencia pueda apuntar a objetos de diferentes clases, ejecutando el método correspondiente según el tipo del objeto real.</p>
-<h2 id="interfaces">Interfaces</h2>
-<p>Una <strong>interfaz</strong> define un conjunto de métodos sin implementación. Las clases que la implementan son responsables de definir su funcionamiento.</p>
-<p>Las interfaces permiten simular la herencia múltiple y promueven la flexibilidad del diseño.</p>
-<hr />
-<h2 id="reusabilidad">Reusabilidad</h2>
-<p>La <strong>reusabilidad</strong> consiste en emplear código existente en diferentes contextos o proyectos, evitando duplicaciones. Se refiere a la capacidad de utilizar las mismas piezas de código en diferentes partes del programa o en diferentes proyectos.</p>
-<h3 id="beneficios">Beneficios</h3>
-<ul>
-<li>Reducción de errores y duplicaciones.</li>
-<li>Mayor rapidez en el desarrollo.</li>
-<li>Código más consistente y probado.</li>
-</ul>
-<h2 id="conclusion">Conclusión</h2>
-<ul>
-<li>La <strong>modularidad</strong> favorece el orden y la claridad.  </li>
-<li>La <strong>herencia</strong> y el <strong>polimorfismo</strong> permiten extender y generalizar comportamientos.  </li>
-<li>La <strong>reusabilidad</strong> reduce costes y facilita el mantenimiento.  </li>
-<li>Las <strong>interfaces</strong> aportan flexibilidad para diseñar sistemas más escalables.</li>
-</ul>
-<p>Estos principios son fundamentales en la <strong>Programación Orientada a Objetos (POO)</strong> y constituyen la base de un software robusto y adaptable.</p>
-<p><strong><a href="../02_codigos1/">Ejemplos prácticos 1</a></strong></p>
-<p><strong><a href="../02_codigos2/">Ejemplos prácticos 2</a></strong></p>
-<p><strong><a href="../02_codigos3/">Ejemplos prácticos 3</a></strong></p>
-<p><strong><a href="../02_codigos4/">Ejemplos prácticos 4</a></strong></p>
+<details>
+<summary>💡 extends</summary>
+<p>Solo puedes <strong>extender de UNA sola clase</strong> (Java no permite herencia múltiple de clases).</p>
+<p>Heredas atributos y métodos de la superclase.</p>
+<p>Puedes <strong>sobrescribir (override)</strong> métodos para dar un comportamiento específico.</p>
+<p>Puedes añadir nuevos atributos o métodos.</p>
+<p>extends significa: <i>soy un tipo más específico de esa clase</i>.</p>
+</details>
+
+<details>
+<summary>💡 implements</summary>
+<p>Una interfaz define un <strong>contrato</strong> (qué métodos debe tener la clase), pero no la implementación.</p>
+<p>Una clase puede <strong>implementar varias interfaces</strong> → es la forma de tener <i>herencia múltiple</i> en Java.</p>
+<p>Obliga a la clase a implementar todos los métodos declarados en la interfaz (salvo que la clase sea abstracta).</p>
+<p>Puedes añadir nuevos atributos o métodos.</p>
+<p>implements significa: <i>cumplo el contrato de esta interfaz</i>.</p>
+</details>
 
 
 
