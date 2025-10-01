@@ -22,7 +22,7 @@ Se deben usar cuando la información o el comportamiento no dependen de un objet
 <p> Se usan métodos de clase (static) cuando la funcionalidad no depende del estado de una instancia y puede ejecutarse sin necesidad de crear un objeto.</p>
 </details>
 
- **[Atributos de clase](02_codigos4.4.md#metodos-de-clase)**
+ **[Métodos de clase](02_codigos4.4.md#metodos-de-clase)**
 
 
 ### Constantes
@@ -35,7 +35,7 @@ En Java, las **constantes** son variables cuyo valor no puede modificarse una ve
 <p> Se utilizan para representar valores fijos y universales en el programa, mejorando la legibilidad y evitando errores asociados a la duplicación de <i>números mágicos</i> o cadenas repetidas en el código.</p>
 </details>
 
- **[Atributos de clase](02_codigos4.4.md#constantes)**
+ **[Constantes](02_codigos4.4.md#constantes)**
 
 ### Patrón Singleton
 
@@ -43,3 +43,4 @@ El patrón **Singleton** es un **patrón de diseño creacional** que garantiza q
 En Java, se implementa declarando el constructor como privado (para evitar que se creen instancias desde fuera) y proporcionando un método público y estático que devuelve siempre la misma instancia (por ejemplo, getInstance()).  
 Se suele usar cuando es necesario un único punto de acceso a un recurso compartido, como un gestor de configuración, un logger, una conexión a base de datos o un manejador de hilos.
 
+ **[Singleton](02_codigos4.4.md#singleton)**

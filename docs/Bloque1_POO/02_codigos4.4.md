@@ -63,59 +63,61 @@ public class Constantes {
 ### Singleton
 
 ```java
-// Ejemplo básico de Singleton en Java
-public class Configuracion {
+// Singleton1.java
+// Ejemplo de Singleton listo para ejecutarse en un único fichero con "Run" de VS Code.
 
-    // 1. Atributo estático que guarda la única instancia
-    private static Configuracion instancia;
+public class Singleton1 {
 
-    // 2. Constructor privado → evita crear objetos desde fuera
-    private Configuracion() {
+    // Instancia única (volatile para doble comprobación segura en multihilo)
+    private static volatile Singleton1 instancia;
+
+    // Constructor privado: evita instanciación externa
+    private Singleton1() {
         System.out.println("Inicializando configuración...");
     }
 
-    // 3. Método público estático para obtener la instancia
-    public static Configuracion getInstance() {
+    // Punto de acceso global con double-checked locking (seguro desde Java 5+)
+    public static Singleton1 getInstance() {
         if (instancia == null) {
-            // Si aún no existe, se crea
-            instancia = new Configuracion();
+            synchronized (Singleton1.class) {
+                if (instancia == null) {
+                    instancia = new Singleton1();
+                }
+            }
         }
-        // Siempre devuelve la misma instancia
         return instancia;
     }
 
-    // 4. Métodos de ejemplo
     public void mostrarMensaje() {
-        System.out.println("Usando la misma configuración en toda la aplicación");
+        System.out.println("¡Hola desde el Singleton!");
     }
-}
 
-// Ejemplo de uso
-public class Main {
+    // Método main en el MISMO fichero/clase para ejecutarlo directamente
     public static void main(String[] args) {
-        Configuracion c1 = Configuracion.getInstance();
-        Configuracion c2 = Configuracion.getInstance();
+        Singleton1 c1 = Singleton1.getInstance();
+        Singleton1 c2 = Singleton1.getInstance();
 
         c1.mostrarMensaje();
 
         // Verificación: ambas referencias apuntan al mismo objeto
-        System.out.println(c1 == c2); // true
+        System.out.println("¿Es la misma instancia? " + (c1 == c2));
     }
 }
+
 ```
 
 
 ```java
-public class Singleton {
-    private static Singleton instanciaUnica;
+public class Singleton2 {
+    private static Singleton2 instanciaUnica;
 
     // Constructor privado para evitar la creación de nuevas instancias
-    private Singleton() {}
+    private Singleton2() {}
 
     // Método de clase para obtener la instancia única
-    public static Singleton obtenerInstancia() {
+    public static Singleton2 obtenerInstancia() {
         if (instanciaUnica == null) {
-            instanciaUnica = new Singleton();
+            instanciaUnica = new Singleton2();
         }
         return instanciaUnica;
     }
@@ -125,9 +127,10 @@ public class Singleton {
     }
 
     public static void main(String[] args) {
-        Singleton instancia = Singleton.obtenerInstancia();
+        Singleton2 instancia = Singleton2.obtenerInstancia();
         instancia.mostrarMensaje();
     }
 }
+
 ```
 ---
