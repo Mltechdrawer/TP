@@ -254,7 +254,7 @@ public class Main {
 ---
 
 <details>
-<summary>💡 Overrride vs Overload </summary>
+<summary> Overrride vs Overload </summary>
 <p><strong> Override (area(), dibujar()): </strong></p>
 <p> - Misma firma que en la superclase. </p>
 <p> - Decide en tiempo de ejecución qué versión usar. </p>
