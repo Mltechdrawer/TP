@@ -16,7 +16,7 @@
     
     
       
-        <title>Genericidad y contenedores - Tecnologías de Programación (TP)</title>
+        <title>Operaciones sobre colecciones en Java - Tecnologías de Programación (TP)</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#genericidad-y-contenedores" class="md-skip">
+        <a href="#operaciones-sobre-colecciones-en-java" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Genericidad y contenedores
+              Operaciones sobre colecciones en Java
             
           </span>
         </div>
@@ -598,71 +598,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#definiciones-y-ejemplos-ilustrativos" class="md-nav__link">
+  <a href="#list-listas" class="md-nav__link">
     <span class="md-ellipsis">
-      Definiciones y ejemplos ilustrativos
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Definiciones y ejemplos ilustrativos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#colecciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      Colecciones
+      List (Listas)
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#list" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#set-conjuntos" class="md-nav__link">
     <span class="md-ellipsis">
-      List
+      Set (Conjuntos)
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#set" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#map-mapas" class="md-nav__link">
     <span class="md-ellipsis">
-      Set
+      Map (Mapas)
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#map" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#queue-colas" class="md-nav__link">
     <span class="md-ellipsis">
-      Map
+      Queue (Colas)
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#queue" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#deque-deques" class="md-nav__link">
     <span class="md-ellipsis">
-      Queue
+      Deque (Deques)
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deque" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deque
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -682,267 +658,87 @@
 
 
 
-<h1 id="genericidad-y-contenedores">Genericidad y contenedores</h1>
-<h2 id="definiciones-y-ejemplos-ilustrativos">Definiciones y ejemplos ilustrativos</h2>
-<h3 id="colecciones">Colecciones</h3>
-<pre><code class="language-java">import java.util.*;  // Importamos las colecciones y las interfaces necesarias
-
-public class EjemploColecciones {
-    public static void main(String[] args) {
-        // ------------------ Uso de la Interfaz Set y SortedSet ------------------
-
-        // Set no permite elementos duplicados
-        Set&lt;String&gt; conjuntoNombres = new HashSet&lt;&gt;();
-        conjuntoNombres.add(&quot;María&quot;);
-        conjuntoNombres.add(&quot;Juan&quot;);
-        conjuntoNombres.add(&quot;Ana&quot;);
-        conjuntoNombres.add(&quot;Pedro&quot;);
-
-        System.out.println(&quot;Conjunto de nombres (Set): &quot; + conjuntoNombres);
-
-        // SortedSet mantiene los elementos ordenados
-        SortedSet&lt;String&gt; conjuntoOrdenado = new TreeSet&lt;&gt;(conjuntoNombres);
-        System.out.println(&quot;Conjunto ordenado (SortedSet): &quot; + conjuntoOrdenado);
-
-        // ------------------ Uso de la Interfaz Iterator ------------------
-
-        // Iterador para recorrer el conjunto de nombres
-        Iterator&lt;String&gt; iterador = conjuntoNombres.iterator();
-        System.out.println(&quot;Recorriendo el conjunto con Iterator:&quot;);
-        while (iterador.hasNext()) {
-            String nombre = iterador.next();
-            System.out.println(nombre);
-        }
-
-        // ------------------ Uso de la Interfaz Comparator ------------------
-
-        // Comparator para ordenar alfabéticamente de forma inversa
-        Comparator&lt;String&gt; comparadorInverso = new Comparator&lt;String&gt;() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o2.compareTo(o1);  // Orden inverso
-            }
-        };
-
-        // Aplicamos el comparador inverso al SortedSet
-        SortedSet&lt;String&gt; conjuntoOrdenadoInverso = new TreeSet&lt;&gt;(comparadorInverso);
-        conjuntoOrdenadoInverso.addAll(conjuntoNombres);
-        System.out.println(&quot;Conjunto ordenado inversamente (SortedSet con Comparator): &quot; + conjuntoOrdenadoInverso);
-
-        // ------------------ Uso de la Interfaz List y ListIterator ------------------
-
-        // Lista de números (permite duplicados y tiene un orden específico)
-        List&lt;Integer&gt; listaNumeros = new ArrayList&lt;&gt;();
-        listaNumeros.add(10);
-        listaNumeros.add(20);
-        listaNumeros.add(30);
-        listaNumeros.add(40);
-
-        System.out.println(&quot;Lista de números (List): &quot; + listaNumeros);
-
-        // Uso de ListIterator para recorrer la lista en ambas direcciones
-        ListIterator&lt;Integer&gt; listIterator = listaNumeros.listIterator();
-        System.out.println(&quot;Recorriendo la lista de números hacia adelante con ListIterator:&quot;);
-        while (listIterator.hasNext()) {
-            System.out.println(listIterator.next());
-        }
-
-        // Recorrido hacia atrás
-        System.out.println(&quot;Recorriendo la lista de números hacia atrás con ListIterator:&quot;);
-        while (listIterator.hasPrevious()) {
-            System.out.println(listIterator.previous());
-        }
-
-        // ------------------ Uso de la Interfaz Map y SortedMap ------------------
-
-        // Mapa para almacenar pares clave-valor (ID de empleado y su nombre)
-        //Map&lt;Integer, String&gt; mapaEmpleados = new HashMap&lt;&gt;();
-        // HashMap no garantiza orden de inserción
-        Map&lt;Integer, String&gt; mapaEmpleados = new LinkedHashMap&lt;&gt;();
-        // LinkedHashMap sí garantiza orden de inserción
-        mapaEmpleados.put(103, &quot;Juan&quot;);
-        mapaEmpleados.put(102, &quot;María&quot;);
-        mapaEmpleados.put(101, &quot;Pedro&quot;);
-
-        System.out.println(&quot;Mapa de empleados (Map):&quot;);
-        for (Map.Entry&lt;Integer, String&gt; entrada : mapaEmpleados.entrySet()) {
-            System.out.println(&quot;ID: &quot; + entrada.getKey() + &quot;, Nombre: &quot; + entrada.getValue());
-        }
-
-        // SortedMap para mantener las claves ordenadas
-        SortedMap&lt;Integer, String&gt; mapaEmpleadosOrdenado = new TreeMap&lt;&gt;(mapaEmpleados);
-        System.out.println(&quot;Mapa de empleados ordenado por clave (SortedMap):&quot;);
-        for (Map.Entry&lt;Integer, String&gt; entrada : mapaEmpleadosOrdenado.entrySet()) {
-            System.out.println(&quot;ID: &quot; + entrada.getKey() + &quot;, Nombre: &quot; + entrada.getValue());
-        }
-    }
-}
-</code></pre>
-<hr />
-<h3 id="list">List</h3>
-<pre><code class="language-java">// Una lista es una colección ordenada que permite 
-// elementos duplicados
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-public class EjemploLista {
-    public static void main(String[] args) {
-        List&lt;String&gt; lista = new ArrayList&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos a la lista
-        System.out.println(&quot;Introduce 3 nombres:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            lista.add(sc.nextLine());
-        }
-
-        // Mostrar los elementos de la lista
-        System.out.println(&quot;Los nombres introducidos son:&quot;);
-        for (String nombre : lista) {
-            System.out.println(nombre);
-        }
-
-        sc.close();
-    }
-}
-
-</code></pre>
-<hr />
-<h3 id="set">Set</h3>
-<pre><code class="language-java">// Un conjunto es una colección que no permite 
-// elementos duplicados
-
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-
-public class EjemploConjunto {
-    public static void main(String[] args) {
-        Set&lt;String&gt; conjunto = new HashSet&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos al conjunto
-        System.out.println(&quot;Introduce 3 nombres (los duplicados se ignorarán):&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            conjunto.add(sc.nextLine());
-        }
-
-        // Mostrar los elementos del conjunto
-        System.out.println(&quot;Los nombres introducidos son:&quot;);
-        for (String nombre : conjunto) {
-            System.out.println(nombre);
-        }
-
-        sc.close();
-    }
-}
-</code></pre>
-<hr />
-<h3 id="map">Map</h3>
-<pre><code class="language-java">// Un mapa es una estructura de datos que asocia 
-// claves a valores
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-
-public class EjemploMapa {
-    public static void main(String[] args) {
-        Map&lt;String, Integer&gt; mapa = new HashMap&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos al mapa
-        System.out.println(&quot;Introduce 3 nombres y sus edades:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre: &quot;);
-            String nombre = sc.nextLine();
-            System.out.print(&quot;Edad: &quot;);
-            int edad = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
-            mapa.put(nombre, edad);
-        }
-
-        // Mostrar los elementos del mapa
-        System.out.println(&quot;Los nombres y sus edades son:&quot;);
-        for (Map.Entry&lt;String, Integer&gt; entrada : mapa.entrySet()) {
-            System.out.println(entrada.getKey() + &quot; tiene &quot; + entrada.getValue() + &quot; años.&quot;);
-        }
-
-        sc.close();
-    }
-}
-
-</code></pre>
-<hr />
-<h3 id="queue">Queue</h3>
-<pre><code class="language-java">// Una cola es una estructura de datos FIFO.
-
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-
-public class EjemploCola {
-    public static void main(String[] args) {
-        Queue&lt;String&gt; cola = new LinkedList&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos a la cola
-        System.out.println(&quot;Introduce 3 nombres:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            cola.offer(sc.nextLine());
-        }
-
-        // Mostrar y quitar elementos de la cola
-        System.out.println(&quot;Atendiendo a los nombres en la cola:&quot;);
-        while (!cola.isEmpty()) {
-            System.out.println(&quot;Atendiendo a: &quot; + cola.poll());
-        }
-
-        sc.close();
-    }
-}
-
-</code></pre>
-<hr />
-<h3 id="deque">Deque</h3>
-<pre><code class="language-java">import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Scanner;
-
-public class EjemploDeque {
-    public static void main(String[] args) {
-        Deque&lt;String&gt; deque = new ArrayDeque&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos al principio y al final del deque
-        System.out.println(&quot;Introduce 3 nombres para añadir al principio:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            deque.addFirst(sc.nextLine());
-        }
-
-        System.out.println(&quot;Introduce 3 nombres para añadir al final:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            deque.addLast(sc.nextLine());
-        }
-
-        // Mostrar y quitar elementos del deque desde ambos extremos
-        System.out.println(&quot;Eliminando del principio:&quot;);
-        while (!deque.isEmpty()) {
-            System.out.println(&quot;Eliminado: &quot; + deque.pollFirst());
-        }
-
-        sc.close();
-    }
-}
-</code></pre>
-<hr />
+<h1 id="operaciones-sobre-colecciones-en-java">Operaciones sobre colecciones en Java</h1>
+<h2 id="list-listas">List (Listas)</h2>
+<p>Una lista es una colección <strong>ordenada</strong> que permite <strong>elementos duplicados</strong> y acceso por <strong>índice</strong>.</p>
+<p><strong>Operaciones estándar</strong><br />
+- <code>add(E e)</code>: añade un elemento al final de la lista.<br />
+- <code>get(int index)</code>: devuelve el elemento en una posición específica (por índice).<br />
+- <code>set(int index, E e)</code>: reemplaza el elemento en la posición dada.<br />
+- <code>remove(int index)</code>: elimina el elemento en la posición especificada.<br />
+- <code>size()</code>: devuelve el número de elementos en la lista.<br />
+- <code>isEmpty()</code>: verifica si la lista está vacía.<br />
+- <code>contains(Object o)</code>: verifica si la lista contiene un elemento específico.<br />
+- <code>indexOf(Object o)</code>: devuelve el índice de la primera aparición de un elemento (o <code>-1</code> si no se encuentra).<br />
+- <code>lastIndexOf(Object o)</code>: devuelve el índice de la última aparición de un elemento.<br />
+- <code>clear()</code>: elimina todos los elementos de la lista.</p>
+<p><strong>Operaciones opcionales</strong><br />
+- <code>add(int index, E e)</code>: inserta un elemento en una posición específica.<br />
+- <code>remove(Object o)</code>: elimina la primera ocurrencia de un elemento si está presente.<br />
+- <code>subList(int fromIndex, int toIndex)</code>: devuelve una vista de la lista entre dos índices.<br />
+- <code>iterator()</code>: devuelve un iterador sobre los elementos de la lista.</p>
+<h2 id="set-conjuntos">Set (Conjuntos)</h2>
+<p>Un conjunto es una colección que <strong>no permite duplicados</strong> y <strong>no garantiza</strong> el orden de los elementos.</p>
+<p><strong>Operaciones estándar</strong><br />
+- <code>add(E e)</code>: añade un elemento al conjunto si no está presente.<br />
+- <code>contains(Object o)</code>: verifica si el conjunto contiene un elemento.<br />
+- <code>remove(Object o)</code>: elimina un elemento si está presente.<br />
+- <code>size()</code>: devuelve el número de elementos en el conjunto.<br />
+- <code>isEmpty()</code>: verifica si el conjunto está vacío.<br />
+- <code>iterator()</code>: devuelve un iterador sobre los elementos del conjunto.</p>
+<p><strong>Operaciones opcionales</strong><br />
+- <code>addAll(Collection&lt;? extends E&gt; c)</code>: añade todos los elementos de la colección dada al conjunto, si no están presentes.<br />
+- <code>removeAll(Collection&lt;?&gt; c)</code>: elimina todos los elementos presentes en la colección dada.<br />
+- <code>retainAll(Collection&lt;?&gt; c)</code>: conserva solo los elementos que están en el conjunto y en la colección dada.<br />
+- <code>clear()</code>: elimina todos los elementos del conjunto.</p>
+<h2 id="map-mapas">Map (Mapas)</h2>
+<p>Un mapa es una colección que <strong>asocia claves a valores</strong>. No permite <strong>claves duplicadas</strong>.</p>
+<p><strong>Operaciones estándar</strong><br />
+- <code>put(K key, V value)</code>: añade una asociación clave-valor al mapa.<br />
+- <code>get(Object key)</code>: devuelve el valor asociado con la clave especificada.<br />
+- <code>remove(Object key)</code>: elimina la asociación de la clave especificada.<br />
+- <code>containsKey(Object key)</code>: verifica si el mapa contiene una clave especificada.<br />
+- <code>containsValue(Object value)</code>: verifica si el mapa contiene un valor especificado.<br />
+- <code>size()</code>: devuelve el número de asociaciones clave-valor en el mapa.<br />
+- <code>isEmpty()</code>: verifica si el mapa está vacío.<br />
+- <code>clear()</code>: elimina todas las asociaciones del mapa.</p>
+<p><strong>Operaciones opcionales</strong><br />
+- <code>putIfAbsent(K key, V value)</code>: añade la asociación si la clave no está ya presente en el mapa.<br />
+- <code>putAll(Map&lt;? extends K, ? extends V&gt; m)</code>: copia todas las asociaciones del mapa especificado a este mapa.<br />
+- <code>replace(K key, V value)</code>: reemplaza el valor asociado a la clave especificada si está presente.<br />
+- <code>entrySet()</code>: devuelve una vista de conjunto de las asociaciones clave-valor del mapa.<br />
+- <code>keySet()</code>: devuelve una vista de conjunto de las claves contenidas en este mapa.<br />
+- <code>values()</code>: devuelve una colección de los valores contenidos en el mapa.</p>
+<h2 id="queue-colas">Queue (Colas)</h2>
+<p>Una cola es una colección que opera con el principio <strong>FIFO</strong> (<em>First-In, First-Out</em>).</p>
+<p><strong>Operaciones estándar</strong><br />
+- <code>offer(E e)</code>: inserta un elemento en la cola; devuelve <code>false</code> si no puede ser insertado.<br />
+- <code>poll()</code>: devuelve y elimina el primer elemento de la cola. Devuelve <code>null</code> si está vacía.<br />
+- <code>peek()</code>: devuelve pero no elimina el primer elemento de la cola. Devuelve <code>null</code> si está vacía.<br />
+- <code>isEmpty()</code>: verifica si la cola está vacía.<br />
+- <code>size()</code>: devuelve el número de elementos en la cola.</p>
+<p><strong>Operaciones opcionales</strong><br />
+- <code>add(E e)</code>: añade un elemento a la cola. Lanza una excepción si no puede ser añadido.<br />
+- <code>remove()</code>: devuelve y elimina el primer elemento. Lanza una excepción si la cola está vacía.<br />
+- <code>element()</code>: devuelve pero no elimina el primer elemento. Lanza una excepción si la cola está vacía.</p>
+<h2 id="deque-deques">Deque (Deques)</h2>
+<p>Un <em>deque</em> (<em>Double Ended Queue</em>) es una cola que permite añadir y eliminar elementos desde <strong>ambos extremos</strong>.</p>
+<p><strong>Operaciones estándar</strong><br />
+- <code>addFirst(E e)</code>: inserta un elemento al inicio del deque.<br />
+- <code>addLast(E e)</code>: inserta un elemento al final del deque.<br />
+- <code>removeFirst()</code>: elimina y devuelve el primer elemento del deque.<br />
+- <code>removeLast()</code>: elimina y devuelve el último elemento del deque.<br />
+- <code>getFirst()</code>: devuelve pero no elimina el primer elemento. Lanza excepción si está vacío.<br />
+- <code>getLast()</code>: devuelve pero no elimina el último elemento. Lanza excepción si está vacío.</p>
+<p><strong>Operaciones opcionales</strong><br />
+- <code>offerFirst(E e)</code>: intenta añadir un elemento al principio sin lanzar excepciones.<br />
+- <code>offerLast(E e)</code>: intenta añadir un elemento al final sin lanzar excepciones.<br />
+- <code>pollFirst()</code>: devuelve y elimina el primer elemento, o <code>null</code> si el deque está vacío.<br />
+- <code>pollLast()</code>: devuelve y elimina el último elemento, o <code>null</code> si el deque está vacío.<br />
+- <code>peekFirst()</code>: devuelve pero no elimina el primer elemento, o <code>null</code> si el deque está vacío.<br />
+- <code>peekLast()</code>: devuelve pero no elimina el último elemento, o <code>null</code> si el deque está vacío.<br />
+- <code>push(E e)</code>: inserta un elemento al frente (equivalente a <code>addFirst()</code>).<br />
+- <code>pop()</code>: elimina y devuelve el primer elemento (equivalente a <code>removeFirst()</code>).</p>
 
 
 

@@ -16,7 +16,7 @@
     
     
       
-        <title>Genericidad y contenedores - Tecnologías de Programación (TP)</title>
+        <title>Java Collections Framework (JCF) - Tecnologías de Programación (TP)</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#genericidad-y-contenedores" class="md-skip">
+        <a href="#java-collections-framework-jcf" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Genericidad y contenedores
+              Java Collections Framework (JCF)
             
           </span>
         </div>
@@ -598,64 +598,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#definiciones-y-ejemplos-ilustrativos" class="md-nav__link">
+  <a href="#componentes-del-java-collections-framework" class="md-nav__link">
     <span class="md-ellipsis">
-      Definiciones y ejemplos ilustrativos
+      Componentes del Java Collections Framework
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Definiciones y ejemplos ilustrativos">
+    <nav class="md-nav" aria-label="Componentes del Java Collections Framework">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#colecciones" class="md-nav__link">
+  <a href="#interfaces" class="md-nav__link">
     <span class="md-ellipsis">
-      Colecciones
+      Interfaces
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#list" class="md-nav__link">
+  <a href="#clases-de-implementacion" class="md-nav__link">
     <span class="md-ellipsis">
-      List
+      Clases de implementación
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#set" class="md-nav__link">
+  <a href="#notas-sobre-la-jerarquia" class="md-nav__link">
     <span class="md-ellipsis">
-      Set
+      Notas sobre la jerarquía
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#map" class="md-nav__link">
+  <a href="#algoritmos" class="md-nav__link">
     <span class="md-ellipsis">
-      Map
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#queue" class="md-nav__link">
-    <span class="md-ellipsis">
-      Queue
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deque" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deque
+      Algoritmos
     </span>
   </a>
   
@@ -682,266 +664,65 @@
 
 
 
-<h1 id="genericidad-y-contenedores">Genericidad y contenedores</h1>
-<h2 id="definiciones-y-ejemplos-ilustrativos">Definiciones y ejemplos ilustrativos</h2>
-<h3 id="colecciones">Colecciones</h3>
-<pre><code class="language-java">import java.util.*;  // Importamos las colecciones y las interfaces necesarias
-
-public class EjemploColecciones {
-    public static void main(String[] args) {
-        // ------------------ Uso de la Interfaz Set y SortedSet ------------------
-
-        // Set no permite elementos duplicados
-        Set&lt;String&gt; conjuntoNombres = new HashSet&lt;&gt;();
-        conjuntoNombres.add(&quot;María&quot;);
-        conjuntoNombres.add(&quot;Juan&quot;);
-        conjuntoNombres.add(&quot;Ana&quot;);
-        conjuntoNombres.add(&quot;Pedro&quot;);
-
-        System.out.println(&quot;Conjunto de nombres (Set): &quot; + conjuntoNombres);
-
-        // SortedSet mantiene los elementos ordenados
-        SortedSet&lt;String&gt; conjuntoOrdenado = new TreeSet&lt;&gt;(conjuntoNombres);
-        System.out.println(&quot;Conjunto ordenado (SortedSet): &quot; + conjuntoOrdenado);
-
-        // ------------------ Uso de la Interfaz Iterator ------------------
-
-        // Iterador para recorrer el conjunto de nombres
-        Iterator&lt;String&gt; iterador = conjuntoNombres.iterator();
-        System.out.println(&quot;Recorriendo el conjunto con Iterator:&quot;);
-        while (iterador.hasNext()) {
-            String nombre = iterador.next();
-            System.out.println(nombre);
-        }
-
-        // ------------------ Uso de la Interfaz Comparator ------------------
-
-        // Comparator para ordenar alfabéticamente de forma inversa
-        Comparator&lt;String&gt; comparadorInverso = new Comparator&lt;String&gt;() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o2.compareTo(o1);  // Orden inverso
-            }
-        };
-
-        // Aplicamos el comparador inverso al SortedSet
-        SortedSet&lt;String&gt; conjuntoOrdenadoInverso = new TreeSet&lt;&gt;(comparadorInverso);
-        conjuntoOrdenadoInverso.addAll(conjuntoNombres);
-        System.out.println(&quot;Conjunto ordenado inversamente (SortedSet con Comparator): &quot; + conjuntoOrdenadoInverso);
-
-        // ------------------ Uso de la Interfaz List y ListIterator ------------------
-
-        // Lista de números (permite duplicados y tiene un orden específico)
-        List&lt;Integer&gt; listaNumeros = new ArrayList&lt;&gt;();
-        listaNumeros.add(10);
-        listaNumeros.add(20);
-        listaNumeros.add(30);
-        listaNumeros.add(40);
-
-        System.out.println(&quot;Lista de números (List): &quot; + listaNumeros);
-
-        // Uso de ListIterator para recorrer la lista en ambas direcciones
-        ListIterator&lt;Integer&gt; listIterator = listaNumeros.listIterator();
-        System.out.println(&quot;Recorriendo la lista de números hacia adelante con ListIterator:&quot;);
-        while (listIterator.hasNext()) {
-            System.out.println(listIterator.next());
-        }
-
-        // Recorrido hacia atrás
-        System.out.println(&quot;Recorriendo la lista de números hacia atrás con ListIterator:&quot;);
-        while (listIterator.hasPrevious()) {
-            System.out.println(listIterator.previous());
-        }
-
-        // ------------------ Uso de la Interfaz Map y SortedMap ------------------
-
-        // Mapa para almacenar pares clave-valor (ID de empleado y su nombre)
-        //Map&lt;Integer, String&gt; mapaEmpleados = new HashMap&lt;&gt;();
-        // HashMap no garantiza orden de inserción
-        Map&lt;Integer, String&gt; mapaEmpleados = new LinkedHashMap&lt;&gt;();
-        // LinkedHashMap sí garantiza orden de inserción
-        mapaEmpleados.put(103, &quot;Juan&quot;);
-        mapaEmpleados.put(102, &quot;María&quot;);
-        mapaEmpleados.put(101, &quot;Pedro&quot;);
-
-        System.out.println(&quot;Mapa de empleados (Map):&quot;);
-        for (Map.Entry&lt;Integer, String&gt; entrada : mapaEmpleados.entrySet()) {
-            System.out.println(&quot;ID: &quot; + entrada.getKey() + &quot;, Nombre: &quot; + entrada.getValue());
-        }
-
-        // SortedMap para mantener las claves ordenadas
-        SortedMap&lt;Integer, String&gt; mapaEmpleadosOrdenado = new TreeMap&lt;&gt;(mapaEmpleados);
-        System.out.println(&quot;Mapa de empleados ordenado por clave (SortedMap):&quot;);
-        for (Map.Entry&lt;Integer, String&gt; entrada : mapaEmpleadosOrdenado.entrySet()) {
-            System.out.println(&quot;ID: &quot; + entrada.getKey() + &quot;, Nombre: &quot; + entrada.getValue());
-        }
-    }
-}
-</code></pre>
+<h1 id="java-collections-framework-jcf">Java Collections Framework (JCF)</h1>
+<p>Las <strong>colecciones en Java</strong> forman parte del <strong>framework de colecciones de Java</strong>, conocido como <em>Java Collections Framework</em> (<strong>JCF</strong>).<br />
+Este framework está incluido en el paquete estándar de Java, específicamente en el paquete <code>java.util</code>.<br />
+Fue introducido en la versión <strong>1.2 de Java (Java 2)</strong> y ofrece un conjunto de <strong>interfaces, clases y métodos</strong> para almacenar y manipular grupos de objetos (también llamados colecciones).</p>
 <hr />
-<h3 id="list">List</h3>
-<pre><code class="language-java">// Una lista es una colección ordenada que permite 
-// elementos duplicados
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-public class EjemploLista {
-    public static void main(String[] args) {
-        List&lt;String&gt; lista = new ArrayList&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos a la lista
-        System.out.println(&quot;Introduce 3 nombres:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            lista.add(sc.nextLine());
-        }
-
-        // Mostrar los elementos de la lista
-        System.out.println(&quot;Los nombres introducidos son:&quot;);
-        for (String nombre : lista) {
-            System.out.println(nombre);
-        }
-
-        sc.close();
-    }
-}
-
-</code></pre>
+<p><img alt="Componentes JFC" src="../CollectionInterface.png" title="Componentes Java Collection Framework" /></p>
 <hr />
-<h3 id="set">Set</h3>
-<pre><code class="language-java">// Un conjunto es una colección que no permite 
-// elementos duplicados
-
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-
-public class EjemploConjunto {
-    public static void main(String[] args) {
-        Set&lt;String&gt; conjunto = new HashSet&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos al conjunto
-        System.out.println(&quot;Introduce 3 nombres (los duplicados se ignorarán):&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            conjunto.add(sc.nextLine());
-        }
-
-        // Mostrar los elementos del conjunto
-        System.out.println(&quot;Los nombres introducidos son:&quot;);
-        for (String nombre : conjunto) {
-            System.out.println(nombre);
-        }
-
-        sc.close();
-    }
-}
-</code></pre>
+<h2 id="componentes-del-java-collections-framework">Componentes del Java Collections Framework</h2>
+<h3 id="interfaces">Interfaces</h3>
+<p>Las interfaces principales del framework son:</p>
+<ul>
+<li>
+<p><strong>Collection</strong> → La interfaz raíz de la mayoría de las colecciones.<br />
+  Define las operaciones básicas comunes: añadir, eliminar, recorrer o consultar elementos.</p>
+</li>
+<li>
+<p><strong>List</strong> → Extiende <code>Collection</code>. Define colecciones <strong>ordenadas</strong> que permiten <strong>elementos duplicados</strong><br />
+  (por ejemplo, <code>ArrayList</code>, <code>Vector</code>, <code>LinkedList</code>).</p>
+</li>
+<li>
+<p><strong>Set</strong> → Extiende <code>Collection</code>. Define colecciones que <strong>no permiten elementos duplicados</strong><br />
+  (por ejemplo, <code>HashSet</code>, <code>LinkedHashSet</code>, <code>TreeSet</code>).</p>
+</li>
+<li>
+<p><strong>SortedSet</strong> → Extiende <code>Set</code>. Mantiene los elementos <strong>ordenados</strong> según el orden natural o un comparador.  </p>
+</li>
+<li>
+<p><strong>NavigableSet</strong> → Extiende <code>SortedSet</code>. Permite obtener elementos <strong>mayores o menores</strong> al dado, de forma eficiente.</p>
+</li>
+<li>
+<p><strong>Queue</strong> → Extiende <code>Collection</code>. Define colecciones en las que los elementos se manejan en un <strong>orden específico</strong>,<br />
+  como en una cola (por ejemplo, <code>LinkedList</code>, <code>PriorityQueue</code>).</p>
+</li>
+</ul>
 <hr />
-<h3 id="map">Map</h3>
-<pre><code class="language-java">// Un mapa es una estructura de datos que asocia 
-// claves a valores
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-
-public class EjemploMapa {
-    public static void main(String[] args) {
-        Map&lt;String, Integer&gt; mapa = new HashMap&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos al mapa
-        System.out.println(&quot;Introduce 3 nombres y sus edades:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre: &quot;);
-            String nombre = sc.nextLine();
-            System.out.print(&quot;Edad: &quot;);
-            int edad = sc.nextInt();
-            sc.nextLine(); // Consumir el salto de línea
-            mapa.put(nombre, edad);
-        }
-
-        // Mostrar los elementos del mapa
-        System.out.println(&quot;Los nombres y sus edades son:&quot;);
-        for (Map.Entry&lt;String, Integer&gt; entrada : mapa.entrySet()) {
-            System.out.println(entrada.getKey() + &quot; tiene &quot; + entrada.getValue() + &quot; años.&quot;);
-        }
-
-        sc.close();
-    }
-}
-
-</code></pre>
+<h3 id="clases-de-implementacion">Clases de implementación</h3>
+<p>Clases concretas que <strong>implementan</strong> las interfaces principales:</p>
+<ul>
+<li><code>ArrayList</code>, <code>Vector</code>, <code>LinkedList</code> → para <strong>List</strong>.  </li>
+<li><code>HashSet</code>, <code>LinkedHashSet</code>, <code>TreeSet</code> → para <strong>Set</strong>.  </li>
+<li><code>LinkedList</code>, <code>PriorityQueue</code> → para <strong>Queue</strong>.</li>
+</ul>
 <hr />
-<h3 id="queue">Queue</h3>
-<pre><code class="language-java">// Una cola es una estructura de datos FIFO.
-
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-
-public class EjemploCola {
-    public static void main(String[] args) {
-        Queue&lt;String&gt; cola = new LinkedList&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos a la cola
-        System.out.println(&quot;Introduce 3 nombres:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            cola.offer(sc.nextLine());
-        }
-
-        // Mostrar y quitar elementos de la cola
-        System.out.println(&quot;Atendiendo a los nombres en la cola:&quot;);
-        while (!cola.isEmpty()) {
-            System.out.println(&quot;Atendiendo a: &quot; + cola.poll());
-        }
-
-        sc.close();
-    }
-}
-
-</code></pre>
+<h3 id="notas-sobre-la-jerarquia">Notas sobre la jerarquía</h3>
+<ul>
+<li>Las líneas <strong>continuas</strong> del diagrama indican que una <strong>interfaz extiende otra</strong> (<code>extends</code>).  </li>
+<li>Las líneas <strong>punteadas</strong> indican que una <strong>clase implementa una interfaz</strong> (<code>implements</code>).  </li>
+<li><code>Collection</code> es la <strong>interfaz base</strong> de la jerarquía, mientras que <code>List</code>, <code>Set</code> y <code>Queue</code> son sus subinterfaces principales.  </li>
+<li><code>Map</code> <strong>no hereda</strong> de <code>Collection</code>, pero forma parte del <em>Java Collections Framework</em>.</li>
+</ul>
 <hr />
-<h3 id="deque">Deque</h3>
-<pre><code class="language-java">import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Scanner;
-
-public class EjemploDeque {
-    public static void main(String[] args) {
-        Deque&lt;String&gt; deque = new ArrayDeque&lt;&gt;();
-        Scanner sc = new Scanner(System.in);
-
-        // Añadir elementos al principio y al final del deque
-        System.out.println(&quot;Introduce 3 nombres para añadir al principio:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            deque.addFirst(sc.nextLine());
-        }
-
-        System.out.println(&quot;Introduce 3 nombres para añadir al final:&quot;);
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.print(&quot;Nombre &quot; + (i + 1) + &quot;: &quot;);
-            deque.addLast(sc.nextLine());
-        }
-
-        // Mostrar y quitar elementos del deque desde ambos extremos
-        System.out.println(&quot;Eliminando del principio:&quot;);
-        while (!deque.isEmpty()) {
-            System.out.println(&quot;Eliminado: &quot; + deque.pollFirst());
-        }
-
-        sc.close();
-    }
-}
-</code></pre>
+<h3 id="algoritmos">Algoritmos</h3>
+<p>El framework también provee métodos para realizar <strong>operaciones comunes</strong> sobre colecciones, tales como:</p>
+<ul>
+<li>Búsqueda.  </li>
+<li>Ordenación.  </li>
+<li>Mezcla o manipulación de elementos.  </li>
+</ul>
+<p>Estos métodos están disponibles en la clase de utilidades <code>Collections</code> del paquete <code>java.util</code>.</p>
 <hr />
 
 

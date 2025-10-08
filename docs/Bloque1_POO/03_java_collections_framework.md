@@ -41,6 +41,14 @@ Clases concretas que **implementan** las interfaces principales:
 - `HashSet`, `LinkedHashSet`, `TreeSet` → para **Set**.  
 - `LinkedList`, `PriorityQueue` → para **Queue**.
 
+<details>
+<summary> Orientación a Interfaces </summary>
+<p>Los atributos de datos que hacen referencia a contenedores deben declararse usando tipos de datos propios de interfaces y no de clases.</p>
+<p> Por ejemplo, hacer declaraciones del tipo:</p>
+<p><strong>private List<Persona> = new ArrayList<>();</strong></p>
+<p>Y no del tipo:</p>
+<p>private ArrayList<Persona> = new ArrayList<>();</p>
+</details>
 ---
 
 ### Notas sobre la jerarquía
