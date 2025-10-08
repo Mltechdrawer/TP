@@ -706,6 +706,14 @@ Fue introducido en la versión <strong>1.2 de Java (Java 2)</strong> y ofrece un
 <li><code>HashSet</code>, <code>LinkedHashSet</code>, <code>TreeSet</code> → para <strong>Set</strong>.  </li>
 <li><code>LinkedList</code>, <code>PriorityQueue</code> → para <strong>Queue</strong>.</li>
 </ul>
+<details>
+<summary> Orientación a Interfaces </summary>
+<p>Los atributos de datos que hacen referencia a contenedores deben declararse usando tipos de datos propios de interfaces y no de clases.</p>
+<p> Por ejemplo, hacer declaraciones del tipo:</p>
+<p><strong>private List<Persona> = new ArrayList<>();</strong></p>
+<p>Y no del tipo:</p>
+<p>private ArrayList<Persona> = new ArrayList<>();</p>
+</details>
 <hr />
 <h3 id="notas-sobre-la-jerarquia">Notas sobre la jerarquía</h3>
 <ul>
