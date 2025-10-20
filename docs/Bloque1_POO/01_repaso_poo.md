@@ -4,7 +4,7 @@ La **Programación Orientada a Objetos (POO)** es un paradigma de programación 
 
 ---
 
-## 1. Principios básicos de la POO
+## Principios básicos de la POO
 
 ### Abstracción
 La abstracción consiste en identificar las características esenciales de una entidad del mundo real y representarlas en un modelo computacional.  
@@ -31,15 +31,24 @@ El polimorfismo permite que un mismo método tenga comportamientos distintos seg
 
 ---
 
-## 2. Objetos y clases
+## Objetos y clases
 
 - **Clase**: Es la plantilla que define las propiedades (atributos) y comportamientos (métodos).  
 - **Objeto**: Es una instancia concreta de una clase, que posee valores específicos para sus atributos.  
 
- **[Ejemplo Clase y objeto](01_codigos.md#clases-y-objetos)**
+ **[Clases](01_clases.md)**   
+ 
+ **[Objetos](01_objetos.md)** 
 
+ **[Ejemplo Clase y objeto](01_codigos.md#clases-y-objetos)** 
 
-## 3. Ventajas de la POO
+## Interfaces
+
+- **Interfaz**: es un tipo de referencia que define un contrato de métodos que las clases implementan.   
+
+**[Interfaces](01_interfaces.md)**
+
+## Ventajas de la POO
 
 - **Modularidad**: el código se organiza en componentes independientes.  
 - **Reutilización**: se puede extender y adaptar código existente sin reescribirlo.  
@@ -48,14 +57,14 @@ El polimorfismo permite que un mismo método tenga comportamientos distintos seg
 
 ---
 
-## 4. POO en la práctica
+## POO en la práctica
 
 En la actualidad, la POO se integra con otros paradigmas. Lenguajes como **Java** siguen una orientación a objetos estricta, mientras que **Python** o **C#** permiten combinarla con enfoques funcionales y procedimentales.  
 El repaso de estos conceptos es crucial para afrontar los siguientes temas del bloque, donde se profundizará en aspectos avanzados como modularidad, herencia compleja, genericidad y el uso de contenedores.
 
 ---
 
-## 5. Conclusión
+## Conclusión
 
 La Programación Orientada a Objetos constituye una base sólida para el desarrollo de software moderno. Sus principios permiten construir sistemas más claros, mantenibles y robustos, y son fundamentales para abordar los contenidos más avanzados de la asignatura.
 

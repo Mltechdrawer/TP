@@ -226,6 +226,8 @@ Reglas:
 
 **[Comparadores](03_comparadores.md)**
 
+**[Funciones Lambda](03_lambda.md)**
+
 ---
 ## Comparativa de colecciones en java
 | Colección | Permite duplicados | Orden | Clave-Valor | Acceso típico | Implementaciones comunes |
