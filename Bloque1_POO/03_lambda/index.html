@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../../contenidos/">
-      
-      
-        <link rel="next" href="../02_modularidad_herencia_reusabilidad/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Repaso de POO - Tecnologías de Programación (TP)</title>
+        <title>Funciones Lambda - Tecnologías de Programación (TP)</title>
       
     
     
@@ -64,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tema-repaso-de-programacion-orientada-a-objetos" class="md-skip">
+        <a href="#funciones-lambda" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Repaso de POO
+              Funciones Lambda
             
           </span>
         </div>
@@ -237,20 +233,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -266,7 +260,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Bloque 1. Conceptos avanzados de POO
@@ -277,32 +271,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Repaso de POO
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../01_repaso_poo/" class="md-nav__link">
         
   
   
@@ -313,122 +285,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#principios-basicos-de-la-poo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Principios básicos de la POO
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Principios básicos de la POO">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#abstraccion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Abstracción
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#encapsulacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Encapsulación
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#herencia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Herencia
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#polimorfismo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Polimorfismo
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#objetos-y-clases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objetos y clases
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interfaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interfaces
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ventajas-de-la-poo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ventajas de la POO
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#poo-en-la-practica" class="md-nav__link">
-    <span class="md-ellipsis">
-      POO en la práctica
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusión
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -742,46 +598,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#principios-basicos-de-la-poo" class="md-nav__link">
+  <a href="#introduccion" class="md-nav__link">
     <span class="md-ellipsis">
-      Principios básicos de la POO
+      Introducción
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Principios básicos de la POO">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxis-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxis básica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaces-funcionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfaces funcionales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-practicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos prácticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos prácticos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#abstraccion" class="md-nav__link">
+  <a href="#a-ordenar-una-lista-usando-comparator" class="md-nav__link">
     <span class="md-ellipsis">
-      Abstracción
+      a) Ordenar una lista usando Comparator:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#encapsulacion" class="md-nav__link">
+  <a href="#b-recorrer-una-coleccion-con-foreach" class="md-nav__link">
     <span class="md-ellipsis">
-      Encapsulación
+      b) Recorrer una colección con forEach:
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#herencia" class="md-nav__link">
+  <a href="#c-uso-con-contenedores-y-streams" class="md-nav__link">
     <span class="md-ellipsis">
-      Herencia
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#polimorfismo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Polimorfismo
+      c) Uso con contenedores y streams:
     </span>
   </a>
   
@@ -793,45 +667,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#objetos-y-clases" class="md-nav__link">
+  <a href="#ventajas-y-limitaciones" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetos y clases
+      Ventajas y limitaciones
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#interfaces" class="md-nav__link">
+  <a href="#resumen-final" class="md-nav__link">
     <span class="md-ellipsis">
-      Interfaces
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ventajas-de-la-poo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ventajas de la POO
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#poo-en-la-practica" class="md-nav__link">
-    <span class="md-ellipsis">
-      POO en la práctica
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusión
+      Resumen final
     </span>
   </a>
   
@@ -853,52 +700,178 @@
 
 
 
-<h1 id="tema-repaso-de-programacion-orientada-a-objetos">Tema · Repaso de Programación Orientada a Objetos</h1>
-<p>La <strong>Programación Orientada a Objetos (POO)</strong> es un paradigma de programación que organiza el software en torno a entidades llamadas <em>objetos</em>, los cuales agrupan datos y comportamientos relacionados. Este enfoque resulta fundamental en la ingeniería del software moderna y sirve como base para muchos lenguajes de programación actuales, como Java, C++ o Python.</p>
+<h1 id="funciones-lambda">Funciones Lambda</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Las funciones lambda fueron introducidas en Java 8 con el objetivo de simplificar el código, especialmente al trabajar con colecciones, interfaces funcionales y programación orientada a eventos.<br />
+Una función lambda es una forma compacta de representar una implementación de una interfaz funcional (una interfaz con un único método abstracto).</p>
+<p><strong>¿Qué problema resuelven?</strong><br />
+Antes de Java 8, para implementar comportamientos se utilizaban clases anónimas, lo que generaba código extenso y difícil de leer. Las lambdas permiten escribir código más limpio y expresivo.</p>
 <hr />
-<h2 id="principios-basicos-de-la-poo">Principios básicos de la POO</h2>
-<h3 id="abstraccion">Abstracción</h3>
-<p>La abstracción consiste en identificar las características esenciales de una entidad del mundo real y representarlas en un modelo computacional.  </p>
-<p><strong><a href="../01_codigos/#abstraccion">Ejemplo Abstracción</a></strong></p>
-<h3 id="encapsulacion">Encapsulación</h3>
-<p>La encapsulación protege el acceso directo a los datos internos de un objeto, controlándolo mediante métodos definidos. Esto mejora la seguridad y reduce la dependencia entre módulos.  </p>
-<p><strong><a href="../01_codigos/#encapsulamiento">Ejemplo Encapsulamiento</a></strong></p>
-<h3 id="herencia">Herencia</h3>
-<p>La herencia permite que una clase (subclase) herede atributos y métodos de otra (superclase). Facilita la reutilización de código y la creación de jerarquías lógicas.  </p>
-<p><strong><a href="../01_codigos/#herencia">Ejemplo Herencia</a></strong></p>
-<h3 id="polimorfismo">Polimorfismo</h3>
-<p>El polimorfismo permite que un mismo método tenga comportamientos distintos según el contexto o la clase que lo implemente.  </p>
-<p><strong><a href="../01_codigos/#polimorfismo">Ejemplo Polimorfismo</a></strong></p>
+<h2 id="sintaxis-basica">Sintaxis básica</h2>
+<p>Formato general:</p>
+<pre><code class="language-java">(parámetros) -&gt; expresión
+(parámetros) -&gt; { bloque de código }
+</code></pre>
+<p>Ejemplo comparativo:</p>
+<p><strong>Sin lambda (clase anónima):</strong></p>
+<pre><code class="language-java">Runnable r = new Runnable() {
+    public void run() {
+        System.out.println(&quot;Hola mundo&quot;);
+    }
+};
+</code></pre>
+<p><strong>Con lambda:</strong></p>
+<pre><code class="language-java">Runnable r = () -&gt; System.out.println(&quot;Hola mundo&quot;);
+</code></pre>
 <hr />
-<h2 id="objetos-y-clases">Objetos y clases</h2>
+<details>
+  <summary><strong>Runnable</strong></summary>
+
+  <h3>Código original</h3>
+  <pre><code class="language-java">
+Runnable r = new Runnable() {
+    public void run() {
+        System.out.println("Hola mundo");
+    }
+};
+  </code></pre>
+
+  <h3>¿Qué es <code>Runnable</code>?</h3>
+  <ul>
+    <li><code>Runnable</code> <strong>no es una palabra reservada</strong> del lenguaje Java.</li>
+    <li>Es una <strong>interfaz funcional</strong> que forma parte del paquete estándar <code>java.lang</code>.</li>
+    <li>Una interfaz funcional es aquella que tiene <strong>un único método abstracto</strong>.</li>
+    <li>En este caso, el método es:</li>
+  </ul>
+
+  <pre><code class="language-java">
+void run();
+  </code></pre>
+
+  <h3>¿Qué es una interfaz funcional?</h3>
+  <ul>
+    <li>Es una interfaz que contiene un solo método abstracto.</li>
+    <li>Puede llevar la anotación <code>@FunctionalInterface</code> (opcional, pero recomendable).</li>
+    <li>Ejemplos típicos en Java: <code>Runnable</code>, <code>Comparator</code>, <code>Consumer</code>, <code>Function</code>.</li>
+  </ul>
+
+  <h3>¿Qué es una clase anónima?</h3>
+  <ul>
+    <li>Es una clase sin nombre que se declara e instancia en una misma expresión.</li>
+    <li>En este caso, el código:</li>
+  </ul>
+
+  <pre><code class="language-java">
+new Runnable() {
+    public void run() {
+        System.out.println("Hola mundo");
+    }
+}
+  </code></pre>
+
+  <p>está creando un objeto de una <strong>clase anónima</strong> que implementa la interfaz <code>Runnable</code>.</p>
+
+  <p>Equivalente a escribir:</p>
+
+  <pre><code class="language-java">
+class MiRunnable implements Runnable {
+    public void run() {
+        System.out.println("Hola mundo");
+    }
+}
+
+Runnable r = new MiRunnable();
+  </code></pre>
+
+  <h3>¿Quién es quién en este fragmento?</h3>
+  <table>
+    <tr><th>Elemento</th><th>Significado</th></tr>
+    <tr><td><code>Runnable</code></td><td>Interfaz funcional de Java (no es palabra reservada).</td></tr>
+    <tr><td><code>new Runnable() { ... }</code></td><td>Clase anónima que implementa esa interfaz.</td></tr>
+    <tr><td><code>public void run()</code></td><td>Implementación del método abstracto de la interfaz.</td></tr>
+    <tr><td><code>r</code></td><td>Variable de tipo <code>Runnable</code> que almacena el objeto creado.</td></tr>
+  </table>
+
+  <h3> ¿Por qué se puede convertir en una lambda?</h3>
+  <p>Porque <code>Runnable</code> tiene un único método abstracto (<code>run()</code>), por lo que se puede expresar como una función lambda:</p>
+
+  <pre><code class="language-java">
+Runnable r = () -> System.out.println("Hola mundo");
+  </code></pre>
+
+  <p> Hace lo mismo.  
+  Es más breve y legible.  
+  Ideal desde Java 8.</p>
+
+  <h3>Resumen</h3>
+  <ul>
+    <li><code>Runnable</code> es una interfaz funcional, no una palabra clave del lenguaje.</li>
+    <li>El código original crea una <strong>clase anónima</strong> que implementa esa interfaz.</li>
+    <li>Se puede simplificar usando una <strong>expresión lambda</strong>.</li>
+  </ul>
+
+</details>
+
+<hr />
+<h2 id="interfaces-funcionales">Interfaces funcionales</h2>
+<p>Una <strong>interfaz funcional</strong> es aquella que tiene <strong>un único método abstracto</strong>. Java incluye la anotación <code>@FunctionalInterface</code> para identificarlas.</p>
+<p>Ejemplos comunes:
+- <code>Runnable</code> → <code>void run()</code>
+- <code>Comparator&lt;T&gt;</code> → <code>int compare(T a, T b)</code>
+- <code>Consumer&lt;T&gt;</code> → <code>void accept(T t)</code>
+- <code>Function&lt;T,R&gt;</code> → <code>R apply(T t)</code></p>
+<hr />
+<h2 id="ejemplos-practicos">Ejemplos prácticos</h2>
+<h3 id="a-ordenar-una-lista-usando-comparator">a) Ordenar una lista usando <code>Comparator</code>:</h3>
+<pre><code class="language-java">List&lt;String&gt; nombres = Arrays.asList(&quot;Ana&quot;, &quot;Luis&quot;, &quot;Pedro&quot;);
+Collections.sort(nombres, (a, b) -&gt; a.compareTo(b));
+</code></pre>
+<h3 id="b-recorrer-una-coleccion-con-foreach">b) Recorrer una colección con <code>forEach</code>:</h3>
+<pre><code class="language-java">nombres.forEach(n -&gt; System.out.println(n));
+</code></pre>
+<h3 id="c-uso-con-contenedores-y-streams">c) Uso con contenedores y streams:</h3>
+<pre><code class="language-java">List&lt;Integer&gt; numeros = Arrays.asList(1, 2, 3, 4, 5);
+List&lt;Integer&gt; pares = numeros.stream()
+                             .filter(n -&gt; n % 2 == 0)
+                             .toList();
+System.out.println(pares);
+</code></pre>
+<p>Otro ejemplo: eliminar elementos con <code>removeIf</code>:</p>
+<pre><code class="language-java">nombres.removeIf(n -&gt; n.startsWith(&quot;P&quot;));
+</code></pre>
+<hr />
+<h2 id="ventajas-y-limitaciones">Ventajas y limitaciones</h2>
+<table>
+<thead>
+<tr>
+<th>Ventajas</th>
+<th>Limitaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Código más compacto y legible</td>
+<td>Difíciles de leer si son complejas</td>
+</tr>
+<tr>
+<td>Facilita la programación funcional</td>
+<td>No reemplazan toda la POO</td>
+</tr>
+<tr>
+<td>Mejora uso de colecciones y Streams</td>
+<td>Dependen de interfaces funcionales</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="resumen-final">Resumen final</h2>
 <ul>
-<li><strong>Clase</strong>: Es la plantilla que define las propiedades (atributos) y comportamientos (métodos).  </li>
-<li><strong>Objeto</strong>: Es una instancia concreta de una clase, que posee valores específicos para sus atributos.  </li>
+<li>Las lambdas son funciones anónimas introducidas en Java 8.</li>
+<li>Requieren interfaces funcionales para funcionar.</li>
+<li>Hacen el código más corto, legible y fácil de mantener.</li>
+<li>Son especialmente útiles en colecciones, Streams y programación funcional.</li>
+<li>Son clave para trabajar con contenedores modernos en Java.</li>
 </ul>
-<p><strong><a href="../01_clases/">Clases</a></strong>   </p>
-<p><strong><a href="../01_objetos/">Objetos</a></strong> </p>
-<p><strong><a href="../01_codigos/#clases-y-objetos">Ejemplo Clase y objeto</a></strong> </p>
-<h2 id="interfaces">Interfaces</h2>
-<ul>
-<li><strong>Interfaz</strong>: es un tipo de referencia que define un contrato de métodos que las clases implementan.   </li>
-</ul>
-<p><strong><a href="../01_interfaces/">Interfaces</a></strong></p>
-<h2 id="ventajas-de-la-poo">Ventajas de la POO</h2>
-<ul>
-<li><strong>Modularidad</strong>: el código se organiza en componentes independientes.  </li>
-<li><strong>Reutilización</strong>: se puede extender y adaptar código existente sin reescribirlo.  </li>
-<li><strong>Mantenibilidad</strong>: facilita la lectura, depuración y evolución del software.  </li>
-<li><strong>Escalabilidad</strong>: permite modelar sistemas complejos con jerarquías de clases y objetos.</li>
-</ul>
-<hr />
-<h2 id="poo-en-la-practica">POO en la práctica</h2>
-<p>En la actualidad, la POO se integra con otros paradigmas. Lenguajes como <strong>Java</strong> siguen una orientación a objetos estricta, mientras que <strong>Python</strong> o <strong>C#</strong> permiten combinarla con enfoques funcionales y procedimentales.<br />
-El repaso de estos conceptos es crucial para afrontar los siguientes temas del bloque, donde se profundizará en aspectos avanzados como modularidad, herencia compleja, genericidad y el uso de contenedores.</p>
-<hr />
-<h2 id="conclusion">Conclusión</h2>
-<p>La Programación Orientada a Objetos constituye una base sólida para el desarrollo de software moderno. Sus principios permiten construir sistemas más claros, mantenibles y robustos, y son fundamentales para abordar los contenidos más avanzados de la asignatura.</p>
-<p><strong><a href="../01Java_vs_Python/">Java vs Python</a></strong></p>
-<!--- **[Ejercicio1](01_CuestionarioPOO_interactivo.md)**. --->
 
 
 
