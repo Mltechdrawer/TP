@@ -1,6 +1,6 @@
 # Tipos de clases en Java
 
-## 1. Clase concreta (Concrete Class)
+## Clase concreta (Concrete Class)
 Una clase “normal”, que implementa todos sus métodos y puede instanciarse directamente.
 
 **Ejemplo:**
@@ -14,7 +14,7 @@ public class Coche {
 
 ---
 
-## 2. Clase abstracta (Abstract Class)
+## Clase abstracta (Abstract Class)
 Declarada con la palabra clave `abstract`. Puede contener métodos abstractos (sin cuerpo) y métodos implementados.
 
 **Ejemplo:**
@@ -29,7 +29,7 @@ public abstract class Animal {
 
 ---
 
-## 3. Clase final (Final Class)
+## Clase final (Final Class)
 Marcada con `final`, no puede ser extendida.
 
 **Ejemplo:**
@@ -43,7 +43,7 @@ public final class Utilidades {
 
 ---
 
-## 4. Clase estática anidada (Static Nested Class)
+## Clase estática anidada (Static Nested Class)
 Clase declarada dentro de otra clase con `static`. No depende de una instancia exterior.
 
 **Ejemplo:**
@@ -59,7 +59,7 @@ public class Externa {
 
 ---
 
-## 5. Clase interna / miembro (Inner Class)
+## Clase interna / miembro (Inner Class)
 Clase definida dentro de otra clase, y depende de su instancia.
 
 ```java
@@ -74,7 +74,7 @@ public class Externa {
 
 ---
 
-## 6. Clase local
+## Clase local
 Clase definida dentro de un método.
 
 ```java
@@ -91,7 +91,7 @@ public void metodo() {
 
 ---
 
-## 7. Clase anónima (Anonymous Class)
+## Clase anónima (Anonymous Class)
 Clase sin nombre que implementa una interfaz o hereda de una clase para ser usada “en línea”.
 
 ```java
@@ -104,7 +104,7 @@ Runnable r = new Runnable() {
 
 ---
 
-## 8. Clase POJO (Plain Old Java Object)
+## Clase POJO (Plain Old Java Object)
 Clase simple usada para representar datos. Tiene variables privadas y métodos getter/setter.
 
 ```java
@@ -117,7 +117,7 @@ public class Persona {
 
 ---
 
-## 9. Clase sellada (Sealed Class) – Java 15+
+## Clase sellada (Sealed Class) – Java 15+
 Permite controlar qué clases pueden heredar de ella.
 
 ```java

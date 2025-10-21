@@ -1,6 +1,6 @@
 # Tipos de interfaces
 
-## 1. Interfaz “normal” (o estándar)
+## Interfaz “normal” (o estándar)
 
 - Una interfaz que declara uno o más métodos abstractos que deben implementarse en clases que la implementan.
 - Por ejemplo:
@@ -17,7 +17,7 @@ interface Vehiculo {
 
 ---
 
-## 2. Interfaz funcional
+## Interfaz funcional
 
 - Es una interfaz que tiene un único método abstracto (aunque puede tener múltiples métodos `default` o `static`).
 - Este tipo de interfaz es la base para utilizar expresiones lambda en Java.
@@ -30,7 +30,7 @@ interface Vehiculo {
 
 ---
 
-## 3. Interfaz marcador (Marker Interface)
+## Interfaz marcador (Marker Interface)
 
 - Es una interfaz que no declara métodos ni constantes (o lo hace muy poco), y sirve principalmente para etiquetar o marcar que una clase tiene una determinada propiedad o comportamiento.
 - Ejemplos: `Serializable`, `Cloneable`.
@@ -38,7 +38,7 @@ interface Vehiculo {
 
 ---
 
-## 4. Subinterfaces / Interfaces anidadas
+## Subinterfaces / Interfaces anidadas
 
 - Una interfaz puede extender otras interfaces (múltiples).
 - También es posible declarar interfaces dentro de otras clases o interfaces (interfaces anidadas o interfaces miembro).

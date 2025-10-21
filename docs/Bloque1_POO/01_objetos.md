@@ -5,7 +5,7 @@ Lo que sí podemos clasificar son los **objetos según su origen, comportamiento
 
 ---
 
-## 1. Objetos según el tipo de clase que los crea
+## Objetos según el tipo de clase que los crea
 
 | Tipo de clase               | Tipo de objeto resultante |
 |----------------------------|----------------------------|
@@ -21,7 +21,7 @@ Lo que sí podemos clasificar son los **objetos según su origen, comportamiento
 
 ---
 
-## 2. Objetos según comportamiento en memoria
+## Objetos según comportamiento en memoria
 
 | Tipo de objeto            | Descripción |
 |---------------------------|-------------|
@@ -33,7 +33,7 @@ Lo que sí podemos clasificar son los **objetos según su origen, comportamiento
 
 ---
 
-## 3. Ejemplo de algunos tipos
+## Ejemplo de algunos tipos
 
 ### Objeto de clase concreta
 ```java
